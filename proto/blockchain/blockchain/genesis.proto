@@ -1,0 +1,12 @@
+syntax = "proto3";
+package internetofsports.blockchain.blockchain;
+
+import "gogoproto/gogo.proto";
+import "blockchain/blockchain/params.proto";
+
+option go_package = "github.com/InternetOfSports/blockchain/x/blockchain/types";
+
+// GenesisState defines the blockchain module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+}
