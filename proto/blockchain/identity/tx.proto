@@ -1,7 +1,17 @@
 syntax = "proto3";
+
 package internetofsports.blockchain.identity;
 
 option go_package = "github.com/InternetOfSports/blockchain/x/identity/types";
 
 // Msg defines the Msg service.
-service Msg {}
+service Msg {
+  rpc RegisterParticipant (MsgRegisterParticipant) returns (MsgRegisterParticipantResponse);
+}
+message MsgRegisterParticipant {
+  string creator  = 1;
+  string nickname = 2;
+}
+
+message MsgRegisterParticipantResponse {}
+

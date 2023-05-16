@@ -43954,6 +43954,8 @@ paths:
                       type: string
                     nickname:
                       type: string
+                    address:
+                      type: string
               pagination:
                 type: object
                 properties:
@@ -44076,6 +44078,8 @@ paths:
                     type: string
                   nickname:
                     type: string
+                  address:
+                    type: string
         default:
           description: An unexpected error response.
           schema:
@@ -44120,18 +44124,24 @@ paths:
                     name:
                       type: string
                     players:
-                      type: object
-                      properties:
-                        index:
-                          type: string
-                        nickname:
-                          type: string
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          index:
+                            type: string
+                          nickname:
+                            type: string
+                          address:
+                            type: string
                     owner:
                       type: object
                       properties:
                         index:
                           type: string
                         nickname:
+                          type: string
+                        address:
                           type: string
                     manager:
                       type: object
@@ -44140,12 +44150,16 @@ paths:
                           type: string
                         nickname:
                           type: string
+                        address:
+                          type: string
                     trainer:
                       type: object
                       properties:
                         index:
                           type: string
                         nickname:
+                          type: string
+                        address:
                           type: string
               pagination:
                 type: object
@@ -44270,18 +44284,24 @@ paths:
                   name:
                     type: string
                   players:
-                    type: object
-                    properties:
-                      index:
-                        type: string
-                      nickname:
-                        type: string
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        index:
+                          type: string
+                        nickname:
+                          type: string
+                        address:
+                          type: string
                   owner:
                     type: object
                     properties:
                       index:
                         type: string
                       nickname:
+                        type: string
+                      address:
                         type: string
                   manager:
                     type: object
@@ -44290,12 +44310,16 @@ paths:
                         type: string
                       nickname:
                         type: string
+                      address:
+                        type: string
                   trainer:
                     type: object
                     properties:
                       index:
                         type: string
                       nickname:
+                        type: string
+                      address:
                         type: string
         default:
           description: An unexpected error response.
@@ -71866,6 +71890,8 @@ definitions:
         description: params holds all the parameters of this module.
         type: object
     description: QueryParamsResponse is response type for the Query/Params RPC method.
+  internetofsports.blockchain.identity.MsgRegisterParticipantResponse:
+    type: object
   internetofsports.blockchain.identity.Params:
     type: object
     description: Params defines the parameters for the module.
@@ -71875,6 +71901,8 @@ definitions:
       index:
         type: string
       nickname:
+        type: string
+      address:
         type: string
   internetofsports.blockchain.identity.QueryAllParticipantResponse:
     type: object
@@ -71887,6 +71915,8 @@ definitions:
             index:
               type: string
             nickname:
+              type: string
+            address:
               type: string
       pagination:
         type: object
@@ -71927,18 +71957,24 @@ definitions:
             name:
               type: string
             players:
-              type: object
-              properties:
-                index:
-                  type: string
-                nickname:
-                  type: string
+              type: array
+              items:
+                type: object
+                properties:
+                  index:
+                    type: string
+                  nickname:
+                    type: string
+                  address:
+                    type: string
             owner:
               type: object
               properties:
                 index:
                   type: string
                 nickname:
+                  type: string
+                address:
                   type: string
             manager:
               type: object
@@ -71947,12 +71983,16 @@ definitions:
                   type: string
                 nickname:
                   type: string
+                address:
+                  type: string
             trainer:
               type: object
               properties:
                 index:
                   type: string
                 nickname:
+                  type: string
+                address:
                   type: string
       pagination:
         type: object
@@ -71990,6 +72030,8 @@ definitions:
             type: string
           nickname:
             type: string
+          address:
+            type: string
   internetofsports.blockchain.identity.QueryGetTeamResponse:
     type: object
     properties:
@@ -72001,18 +72043,24 @@ definitions:
           name:
             type: string
           players:
-            type: object
-            properties:
-              index:
-                type: string
-              nickname:
-                type: string
+            type: array
+            items:
+              type: object
+              properties:
+                index:
+                  type: string
+                nickname:
+                  type: string
+                address:
+                  type: string
           owner:
             type: object
             properties:
               index:
                 type: string
               nickname:
+                type: string
+              address:
                 type: string
           manager:
             type: object
@@ -72021,12 +72069,16 @@ definitions:
                 type: string
               nickname:
                 type: string
+              address:
+                type: string
           trainer:
             type: object
             properties:
               index:
                 type: string
               nickname:
+                type: string
+              address:
                 type: string
   internetofsports.blockchain.identity.QueryParamsResponse:
     type: object
@@ -72043,18 +72095,24 @@ definitions:
       name:
         type: string
       players:
-        type: object
-        properties:
-          index:
-            type: string
-          nickname:
-            type: string
+        type: array
+        items:
+          type: object
+          properties:
+            index:
+              type: string
+            nickname:
+              type: string
+            address:
+              type: string
       owner:
         type: object
         properties:
           index:
             type: string
           nickname:
+            type: string
+          address:
             type: string
       manager:
         type: object
@@ -72063,10 +72121,14 @@ definitions:
             type: string
           nickname:
             type: string
+          address:
+            type: string
       trainer:
         type: object
         properties:
           index:
             type: string
           nickname:
+            type: string
+          address:
             type: string
