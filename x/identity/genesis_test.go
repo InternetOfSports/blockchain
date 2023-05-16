@@ -22,6 +22,14 @@ func TestGenesis(t *testing.T) {
 				Index: "1",
 			},
 		},
+		TeamList: []types.Team{
+			{
+				Index: "0",
+			},
+			{
+				Index: "1",
+			},
+		},
 		// this line is used by starport scaffolding # genesis/test/state
 	}
 
@@ -34,5 +42,6 @@ func TestGenesis(t *testing.T) {
 	nullify.Fill(got)
 
 	require.ElementsMatch(t, genesisState.ParticipantList, got.ParticipantList)
+	require.ElementsMatch(t, genesisState.TeamList, got.TeamList)
 	// this line is used by starport scaffolding # genesis/test/assert
 }

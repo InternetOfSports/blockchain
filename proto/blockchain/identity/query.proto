@@ -7,6 +7,7 @@ import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "blockchain/identity/params.proto";
 import "blockchain/identity/participant.proto";
+import "blockchain/identity/team.proto";
 
 option go_package = "github.com/InternetOfSports/blockchain/x/identity/types";
 
@@ -26,6 +27,16 @@ service Query {
   }
   rpc ParticipantAll (QueryAllParticipantRequest) returns (QueryAllParticipantResponse) {
     option (google.api.http).get = "/InternetOfSports/blockchain/identity/participant";
+  
+  }
+  
+  // Queries a list of Team items.
+  rpc Team    (QueryGetTeamRequest) returns (QueryGetTeamResponse) {
+    option (google.api.http).get = "/InternetOfSports/blockchain/identity/team/{index}";
+  
+  }
+  rpc TeamAll (QueryAllTeamRequest) returns (QueryAllTeamResponse) {
+    option (google.api.http).get = "/InternetOfSports/blockchain/identity/team";
   
   }
 }
@@ -54,5 +65,22 @@ message QueryAllParticipantRequest {
 message QueryAllParticipantResponse {
   repeated Participant                            participant = 1 [(gogoproto.nullable) = false];
            cosmos.base.query.v1beta1.PageResponse pagination  = 2;
+}
+
+message QueryGetTeamRequest {
+  string index = 1;
+}
+
+message QueryGetTeamResponse {
+  Team team = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllTeamRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllTeamResponse {
+  repeated Team                                   team       = 1 [(gogoproto.nullable) = false];
+           cosmos.base.query.v1beta1.PageResponse pagination = 2;
 }
 

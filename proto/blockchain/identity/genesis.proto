@@ -5,6 +5,7 @@ package internetofsports.blockchain.identity;
 import "gogoproto/gogo.proto";
 import "blockchain/identity/params.proto";
 import "blockchain/identity/participant.proto";
+import "blockchain/identity/team.proto";
 
 option go_package = "github.com/InternetOfSports/blockchain/x/identity/types";
 
@@ -12,5 +13,6 @@ option go_package = "github.com/InternetOfSports/blockchain/x/identity/types";
 message GenesisState {
            Params      params          = 1 [(gogoproto.nullable) = false];
   repeated Participant participantList = 2 [(gogoproto.nullable) = false];
+  repeated Team        teamList        = 3 [(gogoproto.nullable) = false];
 }
 
