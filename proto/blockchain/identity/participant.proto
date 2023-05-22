@@ -6,6 +6,6 @@ option go_package = "github.com/InternetOfSports/blockchain/x/identity/types";
 message Participant {
   string index = 1; 
   string nickname = 2; 
-  
+  string address = 3;
 }
 
