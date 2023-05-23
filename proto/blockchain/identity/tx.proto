@@ -10,6 +10,7 @@ service Msg {
   rpc CreateTeam          (MsgCreateTeam         ) returns (MsgCreateTeamResponse         );
   rpc SetTeamManager      (MsgSetTeamManager     ) returns (MsgSetTeamManagerResponse     );
   rpc SetTeamTrainer      (MsgSetTeamTrainer     ) returns (MsgSetTeamTrainerResponse     );
+  rpc RequestJoinTeam     (MsgRequestJoinTeam    ) returns (MsgRequestJoinTeamResponse    );
 }
 message MsgRegisterParticipant {
   string creator  = 1;
@@ -40,4 +41,11 @@ message MsgSetTeamTrainer {
 }
 
 message MsgSetTeamTrainerResponse {}
+
+message MsgRequestJoinTeam {
+  string creator = 1;
+  string team    = 2;
+}
+
+message MsgRequestJoinTeamResponse {}
 
