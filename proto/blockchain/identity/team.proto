@@ -11,6 +11,6 @@ message Team {
   Participant owner = 4; 
   Participant manager = 5; 
   Participant trainer = 6; 
-  
+  repeated Participant joiningRequests = 7;
 }
 

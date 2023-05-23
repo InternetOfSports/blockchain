@@ -34,7 +34,8 @@ func GetTxCmd() *cobra.Command {
 	cmd.AddCommand(CmdCreateTeam())
 	cmd.AddCommand(CmdSetTeamManager())
 	cmd.AddCommand(CmdSetTeamTrainer())
-	// this line is used by starport scaffolding # 1
+	cmd.AddCommand(CmdRequestJoinTeam())
+// this line is used by starport scaffolding # 1
 
 	return cmd
 }

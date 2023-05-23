@@ -395,6 +395,94 @@ func (m *MsgSetTeamTrainerResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_MsgSetTeamTrainerResponse proto.InternalMessageInfo
 
+type MsgRequestJoinTeam struct {
+	Creator string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Team    string `protobuf:"bytes,2,opt,name=team,proto3" json:"team,omitempty"`
+}
+
+func (m *MsgRequestJoinTeam) Reset()         { *m = MsgRequestJoinTeam{} }
+func (m *MsgRequestJoinTeam) String() string { return proto.CompactTextString(m) }
+func (*MsgRequestJoinTeam) ProtoMessage()    {}
+func (*MsgRequestJoinTeam) Descriptor() ([]byte, []int) {
+	return fileDescriptor_13deadb02d6524bf, []int{8}
+}
+func (m *MsgRequestJoinTeam) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgRequestJoinTeam) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgRequestJoinTeam.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgRequestJoinTeam) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgRequestJoinTeam.Merge(m, src)
+}
+func (m *MsgRequestJoinTeam) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgRequestJoinTeam) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgRequestJoinTeam.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgRequestJoinTeam proto.InternalMessageInfo
+
+func (m *MsgRequestJoinTeam) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgRequestJoinTeam) GetTeam() string {
+	if m != nil {
+		return m.Team
+	}
+	return ""
+}
+
+type MsgRequestJoinTeamResponse struct {
+}
+
+func (m *MsgRequestJoinTeamResponse) Reset()         { *m = MsgRequestJoinTeamResponse{} }
+func (m *MsgRequestJoinTeamResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgRequestJoinTeamResponse) ProtoMessage()    {}
+func (*MsgRequestJoinTeamResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_13deadb02d6524bf, []int{9}
+}
+func (m *MsgRequestJoinTeamResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgRequestJoinTeamResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgRequestJoinTeamResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgRequestJoinTeamResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgRequestJoinTeamResponse.Merge(m, src)
+}
+func (m *MsgRequestJoinTeamResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgRequestJoinTeamResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgRequestJoinTeamResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgRequestJoinTeamResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*MsgRegisterParticipant)(nil), "internetofsports.blockchain.identity.MsgRegisterParticipant")
 	proto.RegisterType((*MsgRegisterParticipantResponse)(nil), "internetofsports.blockchain.identity.MsgRegisterParticipantResponse")
@@ -404,38 +492,42 @@ func init() {
 	proto.RegisterType((*MsgSetTeamManagerResponse)(nil), "internetofsports.blockchain.identity.MsgSetTeamManagerResponse")
 	proto.RegisterType((*MsgSetTeamTrainer)(nil), "internetofsports.blockchain.identity.MsgSetTeamTrainer")
 	proto.RegisterType((*MsgSetTeamTrainerResponse)(nil), "internetofsports.blockchain.identity.MsgSetTeamTrainerResponse")
+	proto.RegisterType((*MsgRequestJoinTeam)(nil), "internetofsports.blockchain.identity.MsgRequestJoinTeam")
+	proto.RegisterType((*MsgRequestJoinTeamResponse)(nil), "internetofsports.blockchain.identity.MsgRequestJoinTeamResponse")
 }
 
 func init() { proto.RegisterFile("blockchain/identity/tx.proto", fileDescriptor_13deadb02d6524bf) }
 
 var fileDescriptor_13deadb02d6524bf = []byte{
-	// 401 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x94, 0xbf, 0x4e, 0xe3, 0x40,
-	0x10, 0xc6, 0xe3, 0x4b, 0x74, 0x7f, 0x56, 0xba, 0x93, 0xce, 0xa7, 0xbb, 0x33, 0x06, 0x59, 0x91,
-	0x45, 0x41, 0x65, 0x4b, 0xa4, 0x48, 0x01, 0x08, 0x09, 0x68, 0x28, 0xcc, 0x9f, 0x24, 0x15, 0x54,
-	0x1b, 0x33, 0x71, 0x56, 0xc1, 0xbb, 0xd6, 0xee, 0x20, 0x25, 0x0d, 0x0f, 0x40, 0x45, 0xcb, 0xb3,
-	0xf0, 0x02, 0x94, 0x29, 0x29, 0x51, 0xf2, 0x22, 0x28, 0x8e, 0x9d, 0x38, 0xc1, 0x8a, 0x92, 0xd0,
-	0x79, 0xbc, 0xf3, 0x7d, 0xbf, 0x4f, 0x9a, 0xd1, 0x90, 0xad, 0xe6, 0xad, 0xf0, 0x3b, 0x7e, 0x9b,
-	0x32, 0xee, 0xb2, 0x1b, 0xe0, 0xc8, 0xb0, 0xe7, 0x62, 0xd7, 0x89, 0xa4, 0x40, 0xa1, 0x6f, 0x33,
-	0x8e, 0x20, 0x39, 0xa0, 0x68, 0xa9, 0x48, 0x48, 0x54, 0xce, 0xb4, 0xdd, 0x49, 0xdb, 0xed, 0x33,
-	0xf2, 0xcf, 0x53, 0x41, 0x0d, 0x02, 0xa6, 0x10, 0xe4, 0x05, 0x95, 0xc8, 0x7c, 0x16, 0x51, 0x8e,
-	0xba, 0x41, 0xbe, 0xf9, 0x12, 0x28, 0x0a, 0x69, 0x68, 0x65, 0x6d, 0xe7, 0x47, 0x2d, 0x2d, 0x75,
-	0x93, 0x7c, 0xe7, 0xcc, 0xef, 0x70, 0x1a, 0x82, 0xf1, 0x25, 0x7e, 0x9a, 0xd4, 0x76, 0x99, 0x58,
-	0xf9, 0x7e, 0x35, 0x50, 0x91, 0xe0, 0x0a, 0xec, 0x03, 0xf2, 0xd3, 0x53, 0xc1, 0xf1, 0xc8, 0x0b,
-	0x1a, 0x40, 0xc3, 0x05, 0x20, 0x9d, 0x94, 0x32, 0x90, 0xf8, 0xdb, 0xfe, 0x4f, 0xfe, 0xce, 0xc8,
-	0x27, 0xbe, 0xd7, 0xe4, 0xb7, 0xa7, 0x82, 0x3a, 0xe0, 0xe8, 0xaf, 0x47, 0x39, 0x0d, 0x40, 0x2e,
-	0xf6, 0x46, 0xa0, 0x61, 0xea, 0x8d, 0x49, 0x92, 0x70, 0x2c, 0x34, 0x8a, 0xe3, 0xee, 0xa4, 0xb4,
-	0x37, 0xc9, 0xc6, 0x07, 0xf3, 0x7c, 0x72, 0x43, 0x52, 0xc6, 0xd7, 0x21, 0xe3, 0x58, 0x98, 0x92,
-	0x93, 0x72, 0x96, 0x9c, 0x98, 0xa7, 0xe4, 0xdd, 0xe7, 0x12, 0x29, 0x7a, 0x2a, 0xd0, 0x9f, 0x34,
-	0xf2, 0x27, 0x6f, 0x86, 0xfb, 0xce, 0x32, 0x4b, 0xe0, 0xe4, 0x4f, 0xcc, 0x3c, 0xf9, 0x8c, 0x3a,
-	0xcd, 0xa8, 0xdf, 0x13, 0x92, 0x19, 0x76, 0x65, 0x69, 0xcf, 0xa9, 0xc8, 0xdc, 0x5b, 0x43, 0x34,
-	0xe1, 0x3f, 0x68, 0xe4, 0xd7, 0xdc, 0x56, 0x54, 0x97, 0xf6, 0x9b, 0x15, 0x9a, 0x87, 0x6b, 0x0a,
-	0xf3, 0xc2, 0xa4, 0x8b, 0xb2, 0x72, 0x98, 0x44, 0xb8, 0x7a, 0x98, 0xb9, 0xed, 0x39, 0xba, 0x7c,
-	0x19, 0x58, 0x5a, 0x7f, 0x60, 0x69, 0x6f, 0x03, 0x4b, 0x7b, 0x1c, 0x5a, 0x85, 0xfe, 0xd0, 0x2a,
-	0xbc, 0x0e, 0xad, 0xc2, 0x55, 0x35, 0x60, 0xd8, 0xbe, 0x6b, 0x3a, 0xbe, 0x08, 0xdd, 0xd3, 0x04,
-	0x72, 0xde, 0xaa, 0xc7, 0x10, 0x37, 0x73, 0x75, 0xba, 0x99, 0xbb, 0xd3, 0x8b, 0x40, 0x35, 0xbf,
-	0xc6, 0xb7, 0xa7, 0xf2, 0x1e, 0x00, 0x00, 0xff, 0xff, 0x71, 0x32, 0x4c, 0xcb, 0x9b, 0x04, 0x00,
-	0x00,
+	// 443 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x94, 0x4f, 0x6b, 0xd4, 0x40,
+	0x18, 0xc6, 0x77, 0xac, 0x7f, 0x5f, 0x50, 0x71, 0x44, 0x5d, 0x63, 0x09, 0x25, 0x78, 0xf0, 0x94,
+	0x80, 0x3d, 0x54, 0x50, 0x51, 0xaa, 0x17, 0x85, 0xf8, 0x67, 0xdb, 0x93, 0x9e, 0x66, 0xe3, 0xdb,
+	0x74, 0xa8, 0x99, 0x89, 0x33, 0x6f, 0xa1, 0xbd, 0xf8, 0x01, 0x04, 0xc1, 0xab, 0xdf, 0x48, 0xf0,
+	0xd2, 0xa3, 0x47, 0xd9, 0xfd, 0x22, 0xd2, 0x6c, 0x26, 0x4d, 0xd2, 0xb0, 0xee, 0xa6, 0xb7, 0xbc,
+	0xc9, 0x3c, 0xcf, 0xef, 0x61, 0xf2, 0xf0, 0xc2, 0xea, 0xf8, 0xb3, 0x4e, 0xf6, 0x92, 0x5d, 0x21,
+	0x55, 0x24, 0x3f, 0xa1, 0x22, 0x49, 0x87, 0x11, 0x1d, 0x84, 0xb9, 0xd1, 0xa4, 0xf9, 0x7d, 0xa9,
+	0x08, 0x8d, 0x42, 0xd2, 0x3b, 0x36, 0xd7, 0x86, 0x6c, 0x78, 0x72, 0x3c, 0x74, 0xc7, 0x83, 0x37,
+	0x70, 0x3b, 0xb6, 0xe9, 0x08, 0x53, 0x69, 0x09, 0xcd, 0x3b, 0x61, 0x48, 0x26, 0x32, 0x17, 0x8a,
+	0xf8, 0x10, 0x2e, 0x25, 0x06, 0x05, 0x69, 0x33, 0x64, 0x6b, 0xec, 0xc1, 0x95, 0x91, 0x1b, 0xb9,
+	0x07, 0x97, 0x95, 0x4c, 0xf6, 0x94, 0xc8, 0x70, 0x78, 0xae, 0xf8, 0x54, 0xcd, 0xc1, 0x1a, 0xf8,
+	0xdd, 0x7e, 0x23, 0xb4, 0xb9, 0x56, 0x16, 0x83, 0xa7, 0x70, 0x35, 0xb6, 0xe9, 0x8b, 0x63, 0x2f,
+	0xdc, 0x46, 0x91, 0xcd, 0x01, 0x71, 0x38, 0x5f, 0x83, 0x14, 0xcf, 0xc1, 0x1d, 0xb8, 0xd5, 0x90,
+	0x57, 0xbe, 0x1f, 0xe1, 0x46, 0x6c, 0xd3, 0x2d, 0xa4, 0xe3, 0xb7, 0xb1, 0x50, 0x22, 0x45, 0x33,
+	0xdf, 0x9b, 0x50, 0x64, 0xce, 0x9b, 0xca, 0x24, 0xd9, 0x4c, 0x38, 0x5c, 0x99, 0x9d, 0x2e, 0xc7,
+	0xe0, 0x1e, 0xdc, 0x3d, 0x65, 0xde, 0x4d, 0xde, 0x36, 0x42, 0xaa, 0x3e, 0x64, 0x9a, 0x09, 0x1d,
+	0xb9, 0x1c, 0x9b, 0xe4, 0xd2, 0xbc, 0x22, 0x6f, 0x02, 0x2f, 0x6e, 0xfb, 0xcb, 0x3e, 0x5a, 0x7a,
+	0xad, 0xa5, 0xfa, 0xff, 0x85, 0xb6, 0xd1, 0xc1, 0x2a, 0x78, 0xa7, 0x3d, 0x1c, 0xe1, 0xe1, 0xef,
+	0x0b, 0xb0, 0x12, 0xdb, 0x94, 0xff, 0x64, 0x70, 0xb3, 0xab, 0x25, 0x4f, 0xc2, 0x45, 0x6a, 0x16,
+	0x76, 0x77, 0xc2, 0x7b, 0x79, 0x16, 0xb5, 0xcb, 0xc8, 0xbf, 0x02, 0xd4, 0xea, 0xb4, 0xbe, 0xb0,
+	0xe7, 0x89, 0xc8, 0x7b, 0xdc, 0x43, 0x54, 0xf1, 0xbf, 0x31, 0xb8, 0xd6, 0xea, 0xdd, 0xc6, 0xc2,
+	0x7e, 0x4d, 0xa1, 0xf7, 0xac, 0xa7, 0xb0, 0x2b, 0x8c, 0xab, 0xe2, 0xd2, 0x61, 0x4a, 0xe1, 0xf2,
+	0x61, 0x5a, 0xfd, 0xe4, 0xdf, 0x19, 0x5c, 0x6f, 0xb7, 0xf3, 0xd1, 0x12, 0xff, 0xbc, 0xa1, 0xf4,
+	0x9e, 0xf7, 0x55, 0xba, 0x3c, 0x9b, 0xef, 0x7f, 0x4d, 0x7c, 0x76, 0x34, 0xf1, 0xd9, 0xdf, 0x89,
+	0xcf, 0x7e, 0x4c, 0xfd, 0xc1, 0xd1, 0xd4, 0x1f, 0xfc, 0x99, 0xfa, 0x83, 0x0f, 0x1b, 0xa9, 0xa4,
+	0xdd, 0xfd, 0x71, 0x98, 0xe8, 0x2c, 0x7a, 0x55, 0x52, 0xde, 0xee, 0x6c, 0x15, 0x94, 0xa8, 0xb6,
+	0x67, 0x0f, 0x6a, 0x9b, 0xf6, 0x30, 0x47, 0x3b, 0xbe, 0x58, 0x6c, 0xdb, 0xf5, 0x7f, 0x01, 0x00,
+	0x00, 0xff, 0xff, 0x3f, 0x27, 0xd9, 0x64, 0x8d, 0x05, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -454,6 +546,7 @@ type MsgClient interface {
 	CreateTeam(ctx context.Context, in *MsgCreateTeam, opts ...grpc.CallOption) (*MsgCreateTeamResponse, error)
 	SetTeamManager(ctx context.Context, in *MsgSetTeamManager, opts ...grpc.CallOption) (*MsgSetTeamManagerResponse, error)
 	SetTeamTrainer(ctx context.Context, in *MsgSetTeamTrainer, opts ...grpc.CallOption) (*MsgSetTeamTrainerResponse, error)
+	RequestJoinTeam(ctx context.Context, in *MsgRequestJoinTeam, opts ...grpc.CallOption) (*MsgRequestJoinTeamResponse, error)
 }
 
 type msgClient struct {
@@ -500,12 +593,22 @@ func (c *msgClient) SetTeamTrainer(ctx context.Context, in *MsgSetTeamTrainer, o
 	return out, nil
 }
 
+func (c *msgClient) RequestJoinTeam(ctx context.Context, in *MsgRequestJoinTeam, opts ...grpc.CallOption) (*MsgRequestJoinTeamResponse, error) {
+	out := new(MsgRequestJoinTeamResponse)
+	err := c.cc.Invoke(ctx, "/internetofsports.blockchain.identity.Msg/RequestJoinTeam", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 type MsgServer interface {
 	RegisterParticipant(context.Context, *MsgRegisterParticipant) (*MsgRegisterParticipantResponse, error)
 	CreateTeam(context.Context, *MsgCreateTeam) (*MsgCreateTeamResponse, error)
 	SetTeamManager(context.Context, *MsgSetTeamManager) (*MsgSetTeamManagerResponse, error)
 	SetTeamTrainer(context.Context, *MsgSetTeamTrainer) (*MsgSetTeamTrainerResponse, error)
+	RequestJoinTeam(context.Context, *MsgRequestJoinTeam) (*MsgRequestJoinTeamResponse, error)
 }
 
 // UnimplementedMsgServer can be embedded to have forward compatible implementations.
@@ -523,6 +626,9 @@ func (*UnimplementedMsgServer) SetTeamManager(ctx context.Context, req *MsgSetTe
 }
 func (*UnimplementedMsgServer) SetTeamTrainer(ctx context.Context, req *MsgSetTeamTrainer) (*MsgSetTeamTrainerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetTeamTrainer not implemented")
+}
+func (*UnimplementedMsgServer) RequestJoinTeam(ctx context.Context, req *MsgRequestJoinTeam) (*MsgRequestJoinTeamResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RequestJoinTeam not implemented")
 }
 
 func RegisterMsgServer(s grpc1.Server, srv MsgServer) {
@@ -601,6 +707,24 @@ func _Msg_SetTeamTrainer_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Msg_RequestJoinTeam_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgRequestJoinTeam)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).RequestJoinTeam(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/internetofsports.blockchain.identity.Msg/RequestJoinTeam",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).RequestJoinTeam(ctx, req.(*MsgRequestJoinTeam))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Msg_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "internetofsports.blockchain.identity.Msg",
 	HandlerType: (*MsgServer)(nil),
@@ -620,6 +744,10 @@ var _Msg_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SetTeamTrainer",
 			Handler:    _Msg_SetTeamTrainer_Handler,
+		},
+		{
+			MethodName: "RequestJoinTeam",
+			Handler:    _Msg_RequestJoinTeam_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -880,6 +1008,66 @@ func (m *MsgSetTeamTrainerResponse) MarshalToSizedBuffer(dAtA []byte) (int, erro
 	return len(dAtA) - i, nil
 }
 
+func (m *MsgRequestJoinTeam) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgRequestJoinTeam) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgRequestJoinTeam) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Team) > 0 {
+		i -= len(m.Team)
+		copy(dAtA[i:], m.Team)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Team)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgRequestJoinTeamResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgRequestJoinTeamResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgRequestJoinTeamResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintTx(dAtA []byte, offset int, v uint64) int {
 	offset -= sovTx(v)
 	base := offset
@@ -995,6 +1183,32 @@ func (m *MsgSetTeamTrainer) Size() (n int) {
 }
 
 func (m *MsgSetTeamTrainerResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgRequestJoinTeam) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Team)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	return n
+}
+
+func (m *MsgRequestJoinTeamResponse) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -1706,6 +1920,170 @@ func (m *MsgSetTeamTrainerResponse) Unmarshal(dAtA []byte) error {
 		}
 		if fieldNum <= 0 {
 			return fmt.Errorf("proto: MsgSetTeamTrainerResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgRequestJoinTeam) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgRequestJoinTeam: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgRequestJoinTeam: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Team", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Team = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgRequestJoinTeamResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgRequestJoinTeamResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgRequestJoinTeamResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		default:
