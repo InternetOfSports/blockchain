@@ -9,12 +9,24 @@ import (
 
 func RegisterCodec(cdc *codec.LegacyAmino) {
 	cdc.RegisterConcrete(&MsgRegisterParticipant{}, "identity/RegisterParticipant", nil)
+	cdc.RegisterConcrete(&MsgCreateTeam{}, "identity/CreateTeam", nil)
+	cdc.RegisterConcrete(&MsgSetTeamManager{}, "identity/SetTeamManager", nil)
+	cdc.RegisterConcrete(&MsgSetTeamTrainer{}, "identity/SetTeamTrainer", nil)
 	// this line is used by starport scaffolding # 2
 }
 
 func RegisterInterfaces(registry cdctypes.InterfaceRegistry) {
 	registry.RegisterImplementations((*sdk.Msg)(nil),
 		&MsgRegisterParticipant{},
+	)
+	registry.RegisterImplementations((*sdk.Msg)(nil),
+		&MsgCreateTeam{},
+	)
+	registry.RegisterImplementations((*sdk.Msg)(nil),
+		&MsgSetTeamManager{},
+	)
+	registry.RegisterImplementations((*sdk.Msg)(nil),
+		&MsgSetTeamTrainer{},
 	)
 	// this line is used by starport scaffolding # 3
 

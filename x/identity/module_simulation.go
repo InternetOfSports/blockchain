@@ -28,6 +28,18 @@ const (
 	// TODO: Determine the simulation weight value
 	defaultWeightMsgRegisterParticipant int = 100
 
+	opWeightMsgCreateTeam = "op_weight_msg_create_team"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgCreateTeam int = 100
+
+	opWeightMsgSetTeamManager = "op_weight_msg_set_team_manager"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgSetTeamManager int = 100
+
+	opWeightMsgSetTeamTrainer = "op_weight_msg_set_team_trainer"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgSetTeamTrainer int = 100
+
 	// this line is used by starport scaffolding # simapp/module/const
 )
 
@@ -71,6 +83,39 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	operations = append(operations, simulation.NewWeightedOperation(
 		weightMsgRegisterParticipant,
 		identitysimulation.SimulateMsgRegisterParticipant(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgCreateTeam int
+	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgCreateTeam, &weightMsgCreateTeam, nil,
+		func(_ *rand.Rand) {
+			weightMsgCreateTeam = defaultWeightMsgCreateTeam
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgCreateTeam,
+		identitysimulation.SimulateMsgCreateTeam(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgSetTeamManager int
+	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgSetTeamManager, &weightMsgSetTeamManager, nil,
+		func(_ *rand.Rand) {
+			weightMsgSetTeamManager = defaultWeightMsgSetTeamManager
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgSetTeamManager,
+		identitysimulation.SimulateMsgSetTeamManager(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgSetTeamTrainer int
+	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgSetTeamTrainer, &weightMsgSetTeamTrainer, nil,
+		func(_ *rand.Rand) {
+			weightMsgSetTeamTrainer = defaultWeightMsgSetTeamTrainer
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgSetTeamTrainer,
+		identitysimulation.SimulateMsgSetTeamTrainer(am.accountKeeper, am.bankKeeper, am.keeper),
 	))
 
 	// this line is used by starport scaffolding # simapp/module/operation

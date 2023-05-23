@@ -7,6 +7,9 @@ option go_package = "github.com/InternetOfSports/blockchain/x/identity/types";
 // Msg defines the Msg service.
 service Msg {
   rpc RegisterParticipant (MsgRegisterParticipant) returns (MsgRegisterParticipantResponse);
+  rpc CreateTeam          (MsgCreateTeam         ) returns (MsgCreateTeamResponse         );
+  rpc SetTeamManager      (MsgSetTeamManager     ) returns (MsgSetTeamManagerResponse     );
+  rpc SetTeamTrainer      (MsgSetTeamTrainer     ) returns (MsgSetTeamTrainerResponse     );
 }
 message MsgRegisterParticipant {
   string creator  = 1;
@@ -14,4 +17,27 @@ message MsgRegisterParticipant {
 }
 
 message MsgRegisterParticipantResponse {}
+
+message MsgCreateTeam {
+  string creator = 1;
+  string name    = 2;
+}
+
+message MsgCreateTeamResponse {}
+
+message MsgSetTeamManager {
+  string creator = 1;
+  string team    = 2;
+  string manager = 3;
+}
+
+message MsgSetTeamManagerResponse {}
+
+message MsgSetTeamTrainer {
+  string creator = 1;
+  string team    = 2;
+  string trainer = 3;
+}
+
+message MsgSetTeamTrainerResponse {}
 
