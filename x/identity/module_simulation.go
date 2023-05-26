@@ -44,6 +44,10 @@ const (
 	// TODO: Determine the simulation weight value
 	defaultWeightMsgRequestJoinTeam int = 100
 
+	opWeightMsgManageJoinTeamRequest = "op_weight_msg_manage_join_team_request"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgManageJoinTeamRequest int = 100
+
 	// this line is used by starport scaffolding # simapp/module/const
 )
 
@@ -131,6 +135,17 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	operations = append(operations, simulation.NewWeightedOperation(
 		weightMsgRequestJoinTeam,
 		identitysimulation.SimulateMsgRequestJoinTeam(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgManageJoinTeamRequest int
+	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgManageJoinTeamRequest, &weightMsgManageJoinTeamRequest, nil,
+		func(_ *rand.Rand) {
+			weightMsgManageJoinTeamRequest = defaultWeightMsgManageJoinTeamRequest
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgManageJoinTeamRequest,
+		identitysimulation.SimulateMsgManageJoinTeamRequest(am.accountKeeper, am.bankKeeper, am.keeper),
 	))
 
 	// this line is used by starport scaffolding # simapp/module/operation

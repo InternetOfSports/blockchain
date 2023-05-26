@@ -23,13 +23,13 @@ var _ = math.Inf
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type Team struct {
-	Index           string         `protobuf:"bytes,1,opt,name=index,proto3" json:"index,omitempty"`
-	Name            string         `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Players         []*Participant `protobuf:"bytes,3,rep,name=players,proto3" json:"players,omitempty"`
-	Owner           *Participant   `protobuf:"bytes,4,opt,name=owner,proto3" json:"owner,omitempty"`
-	Manager         *Participant   `protobuf:"bytes,5,opt,name=manager,proto3" json:"manager,omitempty"`
-	Trainer         *Participant   `protobuf:"bytes,6,opt,name=trainer,proto3" json:"trainer,omitempty"`
-	JoiningRequests []*Participant `protobuf:"bytes,7,rep,name=joiningRequests,proto3" json:"joiningRequests,omitempty"`
+	Index           string                  `protobuf:"bytes,1,opt,name=index,proto3" json:"index,omitempty"`
+	Name            string                  `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Players         map[string]*Participant `protobuf:"bytes,3,rep,name=players,proto3" json:"players,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Owner           *Participant            `protobuf:"bytes,4,opt,name=owner,proto3" json:"owner,omitempty"`
+	Manager         *Participant            `protobuf:"bytes,5,opt,name=manager,proto3" json:"manager,omitempty"`
+	Trainer         *Participant            `protobuf:"bytes,6,opt,name=trainer,proto3" json:"trainer,omitempty"`
+	JoiningRequests map[string]*Participant `protobuf:"bytes,7,rep,name=joiningRequests,proto3" json:"joiningRequests,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
 func (m *Team) Reset()         { *m = Team{} }
@@ -79,7 +79,7 @@ func (m *Team) GetName() string {
 	return ""
 }
 
-func (m *Team) GetPlayers() []*Participant {
+func (m *Team) GetPlayers() map[string]*Participant {
 	if m != nil {
 		return m.Players
 	}
@@ -107,7 +107,7 @@ func (m *Team) GetTrainer() *Participant {
 	return nil
 }
 
-func (m *Team) GetJoiningRequests() []*Participant {
+func (m *Team) GetJoiningRequests() map[string]*Participant {
 	if m != nil {
 		return m.JoiningRequests
 	}
@@ -116,31 +116,38 @@ func (m *Team) GetJoiningRequests() []*Participant {
 
 func init() {
 	proto.RegisterType((*Team)(nil), "internetofsports.blockchain.identity.Team")
+	proto.RegisterMapType((map[string]*Participant)(nil), "internetofsports.blockchain.identity.Team.JoiningRequestsEntry")
+	proto.RegisterMapType((map[string]*Participant)(nil), "internetofsports.blockchain.identity.Team.PlayersEntry")
 }
 
 func init() { proto.RegisterFile("blockchain/identity/team.proto", fileDescriptor_07a7483b85c85ec1) }
 
 var fileDescriptor_07a7483b85c85ec1 = []byte{
-	// 303 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0xd2, 0x3f, 0x4b, 0x3b, 0x31,
-	0x18, 0x07, 0xf0, 0xe6, 0xd7, 0x7f, 0xfc, 0xe2, 0x20, 0x04, 0x87, 0xe0, 0x10, 0x8a, 0x28, 0x74,
-	0xca, 0xa1, 0x0e, 0xee, 0x2e, 0x22, 0x0e, 0x6a, 0x75, 0xd2, 0x29, 0xbd, 0x3e, 0x6d, 0xa3, 0xbd,
-	0x24, 0x26, 0x4f, 0xb1, 0x7d, 0x17, 0xbe, 0x21, 0x77, 0xc7, 0x8e, 0x8e, 0x72, 0xf7, 0x46, 0xe4,
-	0xee, 0x7a, 0xb4, 0x88, 0x83, 0xdc, 0x96, 0x04, 0x9e, 0xcf, 0xf3, 0x25, 0x7c, 0xa9, 0x18, 0xce,
-	0x6c, 0xfc, 0x1c, 0x4f, 0x95, 0x36, 0x91, 0x1e, 0x81, 0x41, 0x8d, 0xcb, 0x08, 0x41, 0x25, 0xd2,
-	0x79, 0x8b, 0x96, 0x1d, 0x6a, 0x83, 0xe0, 0x0d, 0xa0, 0x1d, 0x07, 0x67, 0x3d, 0x06, 0xb9, 0x19,
-	0x90, 0xd5, 0xc0, 0xfe, 0xd1, 0x6f, 0x8a, 0x53, 0x1e, 0x75, 0xac, 0x9d, 0x32, 0x58, 0x62, 0x07,
-	0xef, 0x4d, 0xda, 0xba, 0x07, 0x95, 0xb0, 0x3d, 0xda, 0xd6, 0x66, 0x04, 0x0b, 0x4e, 0x7a, 0xa4,
-	0xff, 0x7f, 0x50, 0x5e, 0x18, 0xa3, 0x2d, 0xa3, 0x12, 0xe0, 0xff, 0x8a, 0xc7, 0xe2, 0xcc, 0xae,
-	0x68, 0xd7, 0xcd, 0xd4, 0x12, 0x7c, 0xe0, 0xcd, 0x5e, 0xb3, 0xbf, 0x73, 0x72, 0x2c, 0xff, 0x92,
-	0x48, 0xde, 0x6c, 0x96, 0x0f, 0x2a, 0x81, 0x5d, 0xd0, 0xb6, 0x7d, 0x35, 0xe0, 0x79, 0xab, 0x47,
-	0xea, 0x51, 0xe5, 0x7c, 0x9e, 0x2a, 0x51, 0x46, 0x4d, 0xc0, 0xf3, 0x76, 0x5d, 0xaa, 0x12, 0x72,
-	0x0c, 0xbd, 0xd2, 0x79, 0xae, 0x4e, 0x6d, 0x6c, 0x2d, 0xb0, 0x47, 0xba, 0xfb, 0x64, 0xb5, 0xd1,
-	0x66, 0x32, 0x80, 0x97, 0x39, 0x04, 0x0c, 0xbc, 0x5b, 0xf7, 0xdf, 0x7e, 0x4a, 0xe7, 0xb7, 0x1f,
-	0xa9, 0x20, 0xab, 0x54, 0x90, 0xaf, 0x54, 0x90, 0xb7, 0x4c, 0x34, 0x56, 0x99, 0x68, 0x7c, 0x66,
-	0xa2, 0xf1, 0x70, 0x36, 0xd1, 0x38, 0x9d, 0x0f, 0x65, 0x6c, 0x93, 0xe8, 0x72, 0xbd, 0xe7, 0x7a,
-	0x7c, 0x57, 0xec, 0x89, 0xb6, 0xca, 0xb1, 0xd8, 0x2a, 0xd9, 0xd2, 0x41, 0x18, 0x76, 0x8a, 0x66,
-	0x9c, 0x7e, 0x07, 0x00, 0x00, 0xff, 0xff, 0x56, 0x43, 0xb6, 0x2a, 0x88, 0x02, 0x00, 0x00,
+	// 371 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x93, 0xc1, 0x4e, 0xea, 0x40,
+	0x14, 0x86, 0x19, 0xa0, 0x90, 0x3b, 0xdc, 0xe4, 0xde, 0x4c, 0x58, 0x34, 0x2c, 0x26, 0xc4, 0x68,
+	0xc2, 0x6a, 0x1a, 0x71, 0x81, 0x71, 0x63, 0x62, 0x62, 0x8c, 0xba, 0x10, 0xaa, 0x2b, 0x77, 0x43,
+	0x39, 0xc0, 0x08, 0x9d, 0xa9, 0xd3, 0xa9, 0xd2, 0xb7, 0xf0, 0x6d, 0x7c, 0x05, 0x97, 0x2c, 0x5d,
+	0x1a, 0x78, 0x11, 0xd3, 0x16, 0x02, 0x1a, 0x16, 0x48, 0xe2, 0xee, 0xb4, 0xc9, 0xff, 0xfd, 0x67,
+	0xfe, 0x93, 0x1f, 0xd3, 0xee, 0x58, 0x79, 0x23, 0x6f, 0xc8, 0x85, 0x74, 0x44, 0x0f, 0xa4, 0x11,
+	0x26, 0x76, 0x0c, 0x70, 0x9f, 0x05, 0x5a, 0x19, 0x45, 0xf6, 0x85, 0x34, 0xa0, 0x25, 0x18, 0xd5,
+	0x0f, 0x03, 0xa5, 0x4d, 0xc8, 0x56, 0x02, 0xb6, 0x14, 0xd4, 0x0e, 0x36, 0x51, 0x02, 0xae, 0x8d,
+	0xf0, 0x44, 0xc0, 0xa5, 0xc9, 0x60, 0x7b, 0xaf, 0x16, 0x2e, 0xde, 0x01, 0xf7, 0x49, 0x15, 0x5b,
+	0x42, 0xf6, 0x60, 0x62, 0xa3, 0x3a, 0x6a, 0xfc, 0x71, 0xb3, 0x0f, 0x42, 0x70, 0x51, 0x72, 0x1f,
+	0xec, 0x7c, 0xfa, 0x33, 0x9d, 0x49, 0x07, 0x97, 0x83, 0x31, 0x8f, 0x41, 0x87, 0x76, 0xa1, 0x5e,
+	0x68, 0x54, 0x9a, 0x2d, 0xb6, 0xcd, 0x46, 0x2c, 0xb1, 0x61, 0xed, 0x4c, 0x79, 0x2e, 0x8d, 0x8e,
+	0xdd, 0x25, 0x87, 0x5c, 0x60, 0x4b, 0x3d, 0x4b, 0xd0, 0x76, 0xb1, 0x8e, 0x1a, 0x95, 0xe6, 0xe1,
+	0x76, 0xc0, 0xf6, 0xea, 0x35, 0x6e, 0xa6, 0x27, 0xd7, 0xb8, 0xec, 0x73, 0xc9, 0x07, 0xa0, 0x6d,
+	0x6b, 0x57, 0xd4, 0x92, 0x90, 0xc0, 0x8c, 0xe6, 0x22, 0xd9, 0xab, 0xb4, 0x33, 0x6c, 0x41, 0x20,
+	0x02, 0xff, 0x7b, 0x50, 0x42, 0x0a, 0x39, 0x70, 0xe1, 0x31, 0x82, 0xd0, 0x84, 0x76, 0x39, 0x4d,
+	0xef, 0xf4, 0x07, 0xe9, 0x5d, 0x7d, 0x25, 0x64, 0x29, 0x7e, 0xe7, 0xd6, 0x7c, 0xfc, 0x77, 0x3d,
+	0x66, 0xf2, 0x1f, 0x17, 0x46, 0x10, 0x2f, 0x0e, 0x9b, 0x8c, 0x49, 0xde, 0x4f, 0x7c, 0x1c, 0x65,
+	0x77, 0xdd, 0x2d, 0xef, 0x54, 0x7f, 0x92, 0x3f, 0x46, 0xb5, 0x08, 0x57, 0x37, 0xed, 0xf5, 0xcb,
+	0xb6, 0x67, 0x9d, 0xb7, 0x19, 0x45, 0xd3, 0x19, 0x45, 0x1f, 0x33, 0x8a, 0x5e, 0xe6, 0x34, 0x37,
+	0x9d, 0xd3, 0xdc, 0xfb, 0x9c, 0xe6, 0xee, 0x5b, 0x03, 0x61, 0x86, 0x51, 0x97, 0x79, 0xca, 0x77,
+	0x2e, 0x17, 0x0e, 0x37, 0xfd, 0xdb, 0xd4, 0xc1, 0x59, 0xab, 0xc5, 0x64, 0xad, 0x5e, 0x71, 0x00,
+	0x61, 0xb7, 0x94, 0x76, 0xe2, 0xe8, 0x33, 0x00, 0x00, 0xff, 0xff, 0x24, 0x1f, 0xbe, 0xfb, 0x82,
+	0x03, 0x00, 0x00,
 }
 
 func (m *Team) Marshal() (dAtA []byte, err error) {
@@ -164,15 +171,27 @@ func (m *Team) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	if len(m.JoiningRequests) > 0 {
-		for iNdEx := len(m.JoiningRequests) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.JoiningRequests[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
+		for k := range m.JoiningRequests {
+			v := m.JoiningRequests[k]
+			baseI := i
+			if v != nil {
+				{
+					size, err := v.MarshalToSizedBuffer(dAtA[:i])
+					if err != nil {
+						return 0, err
+					}
+					i -= size
+					i = encodeVarintTeam(dAtA, i, uint64(size))
 				}
-				i -= size
-				i = encodeVarintTeam(dAtA, i, uint64(size))
+				i--
+				dAtA[i] = 0x12
 			}
+			i -= len(k)
+			copy(dAtA[i:], k)
+			i = encodeVarintTeam(dAtA, i, uint64(len(k)))
+			i--
+			dAtA[i] = 0xa
+			i = encodeVarintTeam(dAtA, i, uint64(baseI-i))
 			i--
 			dAtA[i] = 0x3a
 		}
@@ -214,15 +233,27 @@ func (m *Team) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		dAtA[i] = 0x22
 	}
 	if len(m.Players) > 0 {
-		for iNdEx := len(m.Players) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Players[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
+		for k := range m.Players {
+			v := m.Players[k]
+			baseI := i
+			if v != nil {
+				{
+					size, err := v.MarshalToSizedBuffer(dAtA[:i])
+					if err != nil {
+						return 0, err
+					}
+					i -= size
+					i = encodeVarintTeam(dAtA, i, uint64(size))
 				}
-				i -= size
-				i = encodeVarintTeam(dAtA, i, uint64(size))
+				i--
+				dAtA[i] = 0x12
 			}
+			i -= len(k)
+			copy(dAtA[i:], k)
+			i = encodeVarintTeam(dAtA, i, uint64(len(k)))
+			i--
+			dAtA[i] = 0xa
+			i = encodeVarintTeam(dAtA, i, uint64(baseI-i))
 			i--
 			dAtA[i] = 0x1a
 		}
@@ -270,9 +301,16 @@ func (m *Team) Size() (n int) {
 		n += 1 + l + sovTeam(uint64(l))
 	}
 	if len(m.Players) > 0 {
-		for _, e := range m.Players {
-			l = e.Size()
-			n += 1 + l + sovTeam(uint64(l))
+		for k, v := range m.Players {
+			_ = k
+			_ = v
+			l = 0
+			if v != nil {
+				l = v.Size()
+				l += 1 + sovTeam(uint64(l))
+			}
+			mapEntrySize := 1 + len(k) + sovTeam(uint64(len(k))) + l
+			n += mapEntrySize + 1 + sovTeam(uint64(mapEntrySize))
 		}
 	}
 	if m.Owner != nil {
@@ -288,9 +326,16 @@ func (m *Team) Size() (n int) {
 		n += 1 + l + sovTeam(uint64(l))
 	}
 	if len(m.JoiningRequests) > 0 {
-		for _, e := range m.JoiningRequests {
-			l = e.Size()
-			n += 1 + l + sovTeam(uint64(l))
+		for k, v := range m.JoiningRequests {
+			_ = k
+			_ = v
+			l = 0
+			if v != nil {
+				l = v.Size()
+				l += 1 + sovTeam(uint64(l))
+			}
+			mapEntrySize := 1 + len(k) + sovTeam(uint64(len(k))) + l
+			n += mapEntrySize + 1 + sovTeam(uint64(mapEntrySize))
 		}
 	}
 	return n
@@ -424,10 +469,105 @@ func (m *Team) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Players = append(m.Players, &Participant{})
-			if err := m.Players[len(m.Players)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
+			if m.Players == nil {
+				m.Players = make(map[string]*Participant)
 			}
+			var mapkey string
+			var mapvalue *Participant
+			for iNdEx < postIndex {
+				entryPreIndex := iNdEx
+				var wire uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return ErrIntOverflowTeam
+					}
+					if iNdEx >= l {
+						return io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					wire |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				fieldNum := int32(wire >> 3)
+				if fieldNum == 1 {
+					var stringLenmapkey uint64
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowTeam
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						stringLenmapkey |= uint64(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+					intStringLenmapkey := int(stringLenmapkey)
+					if intStringLenmapkey < 0 {
+						return ErrInvalidLengthTeam
+					}
+					postStringIndexmapkey := iNdEx + intStringLenmapkey
+					if postStringIndexmapkey < 0 {
+						return ErrInvalidLengthTeam
+					}
+					if postStringIndexmapkey > l {
+						return io.ErrUnexpectedEOF
+					}
+					mapkey = string(dAtA[iNdEx:postStringIndexmapkey])
+					iNdEx = postStringIndexmapkey
+				} else if fieldNum == 2 {
+					var mapmsglen int
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowTeam
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						mapmsglen |= int(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+					if mapmsglen < 0 {
+						return ErrInvalidLengthTeam
+					}
+					postmsgIndex := iNdEx + mapmsglen
+					if postmsgIndex < 0 {
+						return ErrInvalidLengthTeam
+					}
+					if postmsgIndex > l {
+						return io.ErrUnexpectedEOF
+					}
+					mapvalue = &Participant{}
+					if err := mapvalue.Unmarshal(dAtA[iNdEx:postmsgIndex]); err != nil {
+						return err
+					}
+					iNdEx = postmsgIndex
+				} else {
+					iNdEx = entryPreIndex
+					skippy, err := skipTeam(dAtA[iNdEx:])
+					if err != nil {
+						return err
+					}
+					if (skippy < 0) || (iNdEx+skippy) < 0 {
+						return ErrInvalidLengthTeam
+					}
+					if (iNdEx + skippy) > postIndex {
+						return io.ErrUnexpectedEOF
+					}
+					iNdEx += skippy
+				}
+			}
+			m.Players[mapkey] = mapvalue
 			iNdEx = postIndex
 		case 4:
 			if wireType != 2 {
@@ -566,10 +706,105 @@ func (m *Team) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.JoiningRequests = append(m.JoiningRequests, &Participant{})
-			if err := m.JoiningRequests[len(m.JoiningRequests)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
+			if m.JoiningRequests == nil {
+				m.JoiningRequests = make(map[string]*Participant)
 			}
+			var mapkey string
+			var mapvalue *Participant
+			for iNdEx < postIndex {
+				entryPreIndex := iNdEx
+				var wire uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return ErrIntOverflowTeam
+					}
+					if iNdEx >= l {
+						return io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					wire |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				fieldNum := int32(wire >> 3)
+				if fieldNum == 1 {
+					var stringLenmapkey uint64
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowTeam
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						stringLenmapkey |= uint64(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+					intStringLenmapkey := int(stringLenmapkey)
+					if intStringLenmapkey < 0 {
+						return ErrInvalidLengthTeam
+					}
+					postStringIndexmapkey := iNdEx + intStringLenmapkey
+					if postStringIndexmapkey < 0 {
+						return ErrInvalidLengthTeam
+					}
+					if postStringIndexmapkey > l {
+						return io.ErrUnexpectedEOF
+					}
+					mapkey = string(dAtA[iNdEx:postStringIndexmapkey])
+					iNdEx = postStringIndexmapkey
+				} else if fieldNum == 2 {
+					var mapmsglen int
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowTeam
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						mapmsglen |= int(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+					if mapmsglen < 0 {
+						return ErrInvalidLengthTeam
+					}
+					postmsgIndex := iNdEx + mapmsglen
+					if postmsgIndex < 0 {
+						return ErrInvalidLengthTeam
+					}
+					if postmsgIndex > l {
+						return io.ErrUnexpectedEOF
+					}
+					mapvalue = &Participant{}
+					if err := mapvalue.Unmarshal(dAtA[iNdEx:postmsgIndex]); err != nil {
+						return err
+					}
+					iNdEx = postmsgIndex
+				} else {
+					iNdEx = entryPreIndex
+					skippy, err := skipTeam(dAtA[iNdEx:])
+					if err != nil {
+						return err
+					}
+					if (skippy < 0) || (iNdEx+skippy) < 0 {
+						return ErrInvalidLengthTeam
+					}
+					if (iNdEx + skippy) > postIndex {
+						return io.ErrUnexpectedEOF
+					}
+					iNdEx += skippy
+				}
+			}
+			m.JoiningRequests[mapkey] = mapvalue
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
