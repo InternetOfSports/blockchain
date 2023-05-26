@@ -7,10 +7,10 @@ import "blockchain/identity/participant.proto";
 message Team {
   string index = 1; 
   string name = 2; 
-  repeated Participant players = 3; 
+  map<string, Participant> players = 3; 
   Participant owner = 4; 
   Participant manager = 5; 
   Participant trainer = 6; 
-  repeated Participant joiningRequests = 7;
+  map<string, Participant> joiningRequests = 7;
 }
 

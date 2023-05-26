@@ -19,7 +19,10 @@ func (k msgServer) RequestJoinTeam(goCtx context.Context, msg *types.MsgRequestJ
 	if !teamFound {
 		return nil, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "Team not found")
 	}
-	team.JoiningRequests = append(team.JoiningRequests, &participant)
+	if team.JoiningRequests == nil {
+		team.JoiningRequests = make(map[string]*types.Participant)
+	}
+	team.JoiningRequests[participant.Address] = &participant
 	k.SetTeam(ctx, team)
 	return &types.MsgRequestJoinTeamResponse{}, nil
 }

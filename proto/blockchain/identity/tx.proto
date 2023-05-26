@@ -2,15 +2,18 @@ syntax = "proto3";
 
 package internetofsports.blockchain.identity;
 
+import "blockchain/identity/team.proto";
+
 option go_package = "github.com/InternetOfSports/blockchain/x/identity/types";
 
 // Msg defines the Msg service.
 service Msg {
-  rpc RegisterParticipant (MsgRegisterParticipant) returns (MsgRegisterParticipantResponse);
-  rpc CreateTeam          (MsgCreateTeam         ) returns (MsgCreateTeamResponse         );
-  rpc SetTeamManager      (MsgSetTeamManager     ) returns (MsgSetTeamManagerResponse     );
-  rpc SetTeamTrainer      (MsgSetTeamTrainer     ) returns (MsgSetTeamTrainerResponse     );
-  rpc RequestJoinTeam     (MsgRequestJoinTeam    ) returns (MsgRequestJoinTeamResponse    );
+  rpc RegisterParticipant   (MsgRegisterParticipant  ) returns (MsgRegisterParticipantResponse  );
+  rpc CreateTeam            (MsgCreateTeam           ) returns (MsgCreateTeamResponse           );
+  rpc SetTeamManager        (MsgSetTeamManager       ) returns (MsgSetTeamManagerResponse       );
+  rpc SetTeamTrainer        (MsgSetTeamTrainer       ) returns (MsgSetTeamTrainerResponse       );
+  rpc RequestJoinTeam       (MsgRequestJoinTeam      ) returns (MsgRequestJoinTeamResponse      );
+  rpc ManageJoinTeamRequest (MsgManageJoinTeamRequest) returns (MsgManageJoinTeamRequestResponse);
 }
 message MsgRegisterParticipant {
   string creator  = 1;
@@ -48,4 +51,15 @@ message MsgRequestJoinTeam {
 }
 
 message MsgRequestJoinTeamResponse {}
+
+message MsgManageJoinTeamRequest {
+  string creator     = 1;
+  string team        = 2;
+  string participant = 3;
+  bool   accept      = 4;
+}
+
+message MsgManageJoinTeamRequestResponse {
+  Team team = 1;
+}
 
