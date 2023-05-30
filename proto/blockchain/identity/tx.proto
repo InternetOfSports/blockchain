@@ -3,17 +3,19 @@ syntax = "proto3";
 package internetofsports.blockchain.identity;
 
 import "blockchain/identity/team.proto";
+import "blockchain/identity/participant.proto";
 
 option go_package = "github.com/InternetOfSports/blockchain/x/identity/types";
 
 // Msg defines the Msg service.
 service Msg {
-  rpc RegisterParticipant   (MsgRegisterParticipant  ) returns (MsgRegisterParticipantResponse  );
-  rpc CreateTeam            (MsgCreateTeam           ) returns (MsgCreateTeamResponse           );
-  rpc SetTeamManager        (MsgSetTeamManager       ) returns (MsgSetTeamManagerResponse       );
-  rpc SetTeamTrainer        (MsgSetTeamTrainer       ) returns (MsgSetTeamTrainerResponse       );
-  rpc RequestJoinTeam       (MsgRequestJoinTeam      ) returns (MsgRequestJoinTeamResponse      );
-  rpc ManageJoinTeamRequest (MsgManageJoinTeamRequest) returns (MsgManageJoinTeamRequestResponse);
+  rpc RegisterParticipant         (MsgRegisterParticipant        ) returns (MsgRegisterParticipantResponse        );
+  rpc CreateTeam                  (MsgCreateTeam                 ) returns (MsgCreateTeamResponse                 );
+  rpc SetTeamManager              (MsgSetTeamManager             ) returns (MsgSetTeamManagerResponse             );
+  rpc SetTeamTrainer              (MsgSetTeamTrainer             ) returns (MsgSetTeamTrainerResponse             );
+  rpc RequestJoinTeam             (MsgRequestJoinTeam            ) returns (MsgRequestJoinTeamResponse            );
+  rpc ManageJoinTeamRequest       (MsgManageJoinTeamRequest      ) returns (MsgManageJoinTeamRequestResponse      );
+  rpc InviteParticipantToJoinTeam (MsgInviteParticipantToJoinTeam) returns (MsgInviteParticipantToJoinTeamResponse);
 }
 message MsgRegisterParticipant {
   string creator  = 1;
@@ -61,5 +63,15 @@ message MsgManageJoinTeamRequest {
 
 message MsgManageJoinTeamRequestResponse {
   Team team = 1;
+}
+
+message MsgInviteParticipantToJoinTeam {
+  string creator     = 1;
+  string team        = 2;
+  string participant = 3;
+}
+
+message MsgInviteParticipantToJoinTeamResponse {
+  Participant participant = 1;
 }
 

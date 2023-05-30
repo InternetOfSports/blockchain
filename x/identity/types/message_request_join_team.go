@@ -10,38 +10,37 @@ const TypeMsgRequestJoinTeam = "request_join_team"
 var _ sdk.Msg = &MsgRequestJoinTeam{}
 
 func NewMsgRequestJoinTeam(creator string, team string) *MsgRequestJoinTeam {
-  return &MsgRequestJoinTeam{
+	return &MsgRequestJoinTeam{
 		Creator: creator,
-    Team: team,
+		Team:    team,
 	}
 }
 
 func (msg *MsgRequestJoinTeam) Route() string {
-  return RouterKey
+	return RouterKey
 }
 
 func (msg *MsgRequestJoinTeam) Type() string {
-  return TypeMsgRequestJoinTeam
+	return TypeMsgRequestJoinTeam
 }
 
 func (msg *MsgRequestJoinTeam) GetSigners() []sdk.AccAddress {
-  creator, err := sdk.AccAddressFromBech32(msg.Creator)
-  if err != nil {
-    panic(err)
-  }
-  return []sdk.AccAddress{creator}
+	creator, err := sdk.AccAddressFromBech32(msg.Creator)
+	if err != nil {
+		panic(err)
+	}
+	return []sdk.AccAddress{creator}
 }
 
 func (msg *MsgRequestJoinTeam) GetSignBytes() []byte {
-  bz := ModuleCdc.MustMarshalJSON(msg)
-  return sdk.MustSortJSON(bz)
+	bz := ModuleCdc.MustMarshalJSON(msg)
+	return sdk.MustSortJSON(bz)
 }
 
 func (msg *MsgRequestJoinTeam) ValidateBasic() error {
-  _, err := sdk.AccAddressFromBech32(msg.Creator)
-  	if err != nil {
-  		return sdkerrors.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err)
-  	}
-  return nil
+	_, err := sdk.AccAddressFromBech32(msg.Creator)
+	if err != nil {
+		return sdkerrors.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err)
+	}
+	return nil
 }
-

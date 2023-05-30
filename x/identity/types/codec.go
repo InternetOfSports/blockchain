@@ -13,8 +13,9 @@ func RegisterCodec(cdc *codec.LegacyAmino) {
 	cdc.RegisterConcrete(&MsgSetTeamManager{}, "identity/SetTeamManager", nil)
 	cdc.RegisterConcrete(&MsgSetTeamTrainer{}, "identity/SetTeamTrainer", nil)
 	cdc.RegisterConcrete(&MsgRequestJoinTeam{}, "identity/RequestJoinTeam", nil)
-cdc.RegisterConcrete(&MsgManageJoinTeamRequest{}, "identity/ManageJoinTeamRequest", nil)
-// this line is used by starport scaffolding # 2
+	cdc.RegisterConcrete(&MsgManageJoinTeamRequest{}, "identity/ManageJoinTeamRequest", nil)
+	cdc.RegisterConcrete(&MsgInviteParticipantToJoinTeam{}, "identity/InviteParticipantToJoinTeam", nil)
+	// this line is used by starport scaffolding # 2
 }
 
 func RegisterInterfaces(registry cdctypes.InterfaceRegistry) {
@@ -31,12 +32,15 @@ func RegisterInterfaces(registry cdctypes.InterfaceRegistry) {
 		&MsgSetTeamTrainer{},
 	)
 	registry.RegisterImplementations((*sdk.Msg)(nil),
-	&MsgRequestJoinTeam{},
-)
-registry.RegisterImplementations((*sdk.Msg)(nil),
-	&MsgManageJoinTeamRequest{},
-)
-// this line is used by starport scaffolding # 3
+		&MsgRequestJoinTeam{},
+	)
+	registry.RegisterImplementations((*sdk.Msg)(nil),
+		&MsgManageJoinTeamRequest{},
+	)
+	registry.RegisterImplementations((*sdk.Msg)(nil),
+		&MsgInviteParticipantToJoinTeam{},
+	)
+	// this line is used by starport scaffolding # 3
 
 	msgservice.RegisterMsgServiceDesc(registry, &_Msg_serviceDesc)
 }
