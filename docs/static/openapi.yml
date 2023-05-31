@@ -43993,6 +43993,10 @@ paths:
                       type: string
                     address:
                       type: string
+                    teamJoiningInvites:
+                      type: array
+                      items:
+                        type: string
               pagination:
                 type: object
                 properties:
@@ -44117,6 +44121,10 @@ paths:
                     type: string
                   address:
                     type: string
+                  teamJoiningInvites:
+                    type: array
+                    items:
+                      type: string
         default:
           description: An unexpected error response.
           schema:
@@ -44171,6 +44179,10 @@ paths:
                             type: string
                           address:
                             type: string
+                          teamJoiningInvites:
+                            type: array
+                            items:
+                              type: string
                     owner:
                       type: object
                       properties:
@@ -44180,6 +44192,10 @@ paths:
                           type: string
                         address:
                           type: string
+                        teamJoiningInvites:
+                          type: array
+                          items:
+                            type: string
                     manager:
                       type: object
                       properties:
@@ -44189,6 +44205,10 @@ paths:
                           type: string
                         address:
                           type: string
+                        teamJoiningInvites:
+                          type: array
+                          items:
+                            type: string
                     trainer:
                       type: object
                       properties:
@@ -44198,6 +44218,10 @@ paths:
                           type: string
                         address:
                           type: string
+                        teamJoiningInvites:
+                          type: array
+                          items:
+                            type: string
                     joiningRequests:
                       type: object
                       additionalProperties:
@@ -44209,6 +44233,25 @@ paths:
                             type: string
                           address:
                             type: string
+                          teamJoiningInvites:
+                            type: array
+                            items:
+                              type: string
+                    joiningInvites:
+                      type: object
+                      additionalProperties:
+                        type: object
+                        properties:
+                          index:
+                            type: string
+                          nickname:
+                            type: string
+                          address:
+                            type: string
+                          teamJoiningInvites:
+                            type: array
+                            items:
+                              type: string
               pagination:
                 type: object
                 properties:
@@ -44342,6 +44385,10 @@ paths:
                           type: string
                         address:
                           type: string
+                        teamJoiningInvites:
+                          type: array
+                          items:
+                            type: string
                   owner:
                     type: object
                     properties:
@@ -44351,6 +44398,10 @@ paths:
                         type: string
                       address:
                         type: string
+                      teamJoiningInvites:
+                        type: array
+                        items:
+                          type: string
                   manager:
                     type: object
                     properties:
@@ -44360,6 +44411,10 @@ paths:
                         type: string
                       address:
                         type: string
+                      teamJoiningInvites:
+                        type: array
+                        items:
+                          type: string
                   trainer:
                     type: object
                     properties:
@@ -44369,6 +44424,10 @@ paths:
                         type: string
                       address:
                         type: string
+                      teamJoiningInvites:
+                        type: array
+                        items:
+                          type: string
                   joiningRequests:
                     type: object
                     additionalProperties:
@@ -44380,6 +44439,25 @@ paths:
                           type: string
                         address:
                           type: string
+                        teamJoiningInvites:
+                          type: array
+                          items:
+                            type: string
+                  joiningInvites:
+                    type: object
+                    additionalProperties:
+                      type: object
+                      properties:
+                        index:
+                          type: string
+                        nickname:
+                          type: string
+                        address:
+                          type: string
+                        teamJoiningInvites:
+                          type: array
+                          items:
+                            type: string
         default:
           description: An unexpected error response.
           schema:
@@ -71958,6 +72036,22 @@ definitions:
     type: object
   internetofsports.blockchain.identity.MsgInviteParticipantToJoinTeamResponse:
     type: object
+    properties:
+      participant:
+        type: object
+        properties:
+          index:
+            type: string
+          nickname:
+            type: string
+          address:
+            type: string
+          teamJoiningInvites:
+            type: array
+            items:
+              type: string
+  internetofsports.blockchain.identity.MsgManageJoinTeamInviteResponse:
+    type: object
   internetofsports.blockchain.identity.MsgManageJoinTeamRequestResponse:
     type: object
     properties:
@@ -71979,6 +72073,10 @@ definitions:
                   type: string
                 address:
                   type: string
+                teamJoiningInvites:
+                  type: array
+                  items:
+                    type: string
           owner:
             type: object
             properties:
@@ -71988,6 +72086,10 @@ definitions:
                 type: string
               address:
                 type: string
+              teamJoiningInvites:
+                type: array
+                items:
+                  type: string
           manager:
             type: object
             properties:
@@ -71997,6 +72099,10 @@ definitions:
                 type: string
               address:
                 type: string
+              teamJoiningInvites:
+                type: array
+                items:
+                  type: string
           trainer:
             type: object
             properties:
@@ -72006,6 +72112,10 @@ definitions:
                 type: string
               address:
                 type: string
+              teamJoiningInvites:
+                type: array
+                items:
+                  type: string
           joiningRequests:
             type: object
             additionalProperties:
@@ -72017,6 +72127,25 @@ definitions:
                   type: string
                 address:
                   type: string
+                teamJoiningInvites:
+                  type: array
+                  items:
+                    type: string
+          joiningInvites:
+            type: object
+            additionalProperties:
+              type: object
+              properties:
+                index:
+                  type: string
+                nickname:
+                  type: string
+                address:
+                  type: string
+                teamJoiningInvites:
+                  type: array
+                  items:
+                    type: string
   internetofsports.blockchain.identity.MsgRegisterParticipantResponse:
     type: object
   internetofsports.blockchain.identity.MsgRequestJoinTeamResponse:
@@ -72037,6 +72166,10 @@ definitions:
         type: string
       address:
         type: string
+      teamJoiningInvites:
+        type: array
+        items:
+          type: string
   internetofsports.blockchain.identity.QueryAllParticipantResponse:
     type: object
     properties:
@@ -72051,6 +72184,10 @@ definitions:
               type: string
             address:
               type: string
+            teamJoiningInvites:
+              type: array
+              items:
+                type: string
       pagination:
         type: object
         properties:
@@ -72100,6 +72237,10 @@ definitions:
                     type: string
                   address:
                     type: string
+                  teamJoiningInvites:
+                    type: array
+                    items:
+                      type: string
             owner:
               type: object
               properties:
@@ -72109,6 +72250,10 @@ definitions:
                   type: string
                 address:
                   type: string
+                teamJoiningInvites:
+                  type: array
+                  items:
+                    type: string
             manager:
               type: object
               properties:
@@ -72118,6 +72263,10 @@ definitions:
                   type: string
                 address:
                   type: string
+                teamJoiningInvites:
+                  type: array
+                  items:
+                    type: string
             trainer:
               type: object
               properties:
@@ -72127,6 +72276,10 @@ definitions:
                   type: string
                 address:
                   type: string
+                teamJoiningInvites:
+                  type: array
+                  items:
+                    type: string
             joiningRequests:
               type: object
               additionalProperties:
@@ -72138,6 +72291,25 @@ definitions:
                     type: string
                   address:
                     type: string
+                  teamJoiningInvites:
+                    type: array
+                    items:
+                      type: string
+            joiningInvites:
+              type: object
+              additionalProperties:
+                type: object
+                properties:
+                  index:
+                    type: string
+                  nickname:
+                    type: string
+                  address:
+                    type: string
+                  teamJoiningInvites:
+                    type: array
+                    items:
+                      type: string
       pagination:
         type: object
         properties:
@@ -72176,6 +72348,10 @@ definitions:
             type: string
           address:
             type: string
+          teamJoiningInvites:
+            type: array
+            items:
+              type: string
   internetofsports.blockchain.identity.QueryGetTeamResponse:
     type: object
     properties:
@@ -72197,6 +72373,10 @@ definitions:
                   type: string
                 address:
                   type: string
+                teamJoiningInvites:
+                  type: array
+                  items:
+                    type: string
           owner:
             type: object
             properties:
@@ -72206,6 +72386,10 @@ definitions:
                 type: string
               address:
                 type: string
+              teamJoiningInvites:
+                type: array
+                items:
+                  type: string
           manager:
             type: object
             properties:
@@ -72215,6 +72399,10 @@ definitions:
                 type: string
               address:
                 type: string
+              teamJoiningInvites:
+                type: array
+                items:
+                  type: string
           trainer:
             type: object
             properties:
@@ -72224,6 +72412,10 @@ definitions:
                 type: string
               address:
                 type: string
+              teamJoiningInvites:
+                type: array
+                items:
+                  type: string
           joiningRequests:
             type: object
             additionalProperties:
@@ -72235,6 +72427,25 @@ definitions:
                   type: string
                 address:
                   type: string
+                teamJoiningInvites:
+                  type: array
+                  items:
+                    type: string
+          joiningInvites:
+            type: object
+            additionalProperties:
+              type: object
+              properties:
+                index:
+                  type: string
+                nickname:
+                  type: string
+                address:
+                  type: string
+                teamJoiningInvites:
+                  type: array
+                  items:
+                    type: string
   internetofsports.blockchain.identity.QueryParamsResponse:
     type: object
     properties:
@@ -72260,6 +72471,10 @@ definitions:
               type: string
             address:
               type: string
+            teamJoiningInvites:
+              type: array
+              items:
+                type: string
       owner:
         type: object
         properties:
@@ -72269,6 +72484,10 @@ definitions:
             type: string
           address:
             type: string
+          teamJoiningInvites:
+            type: array
+            items:
+              type: string
       manager:
         type: object
         properties:
@@ -72278,6 +72497,10 @@ definitions:
             type: string
           address:
             type: string
+          teamJoiningInvites:
+            type: array
+            items:
+              type: string
       trainer:
         type: object
         properties:
@@ -72287,6 +72510,10 @@ definitions:
             type: string
           address:
             type: string
+          teamJoiningInvites:
+            type: array
+            items:
+              type: string
       joiningRequests:
         type: object
         additionalProperties:
@@ -72298,3 +72525,22 @@ definitions:
               type: string
             address:
               type: string
+            teamJoiningInvites:
+              type: array
+              items:
+                type: string
+      joiningInvites:
+        type: object
+        additionalProperties:
+          type: object
+          properties:
+            index:
+              type: string
+            nickname:
+              type: string
+            address:
+              type: string
+            teamJoiningInvites:
+              type: array
+              items:
+                type: string

@@ -27,8 +27,8 @@ func TestInviteParticipantToJoinTeam(t *testing.T) {
 				Participant: &types.Participant{
 					Address:  participant_ronaldo,
 					Nickname: "Ronaldo",
-					TeamJoiningInvites: []string{
-						team_messi,
+					TeamJoiningInvites: map[string]string{
+						team_messi: team_messi,
 					},
 				},
 			},

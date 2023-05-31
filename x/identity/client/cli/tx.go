@@ -37,6 +37,7 @@ func GetTxCmd() *cobra.Command {
 	cmd.AddCommand(CmdRequestJoinTeam())
 	cmd.AddCommand(CmdManageJoinTeamRequest())
 	cmd.AddCommand(CmdInviteParticipantToJoinTeam())
+	cmd.AddCommand(CmdManageJoinTeamInvite())
 	// this line is used by starport scaffolding # 1
 
 	return cmd

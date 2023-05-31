@@ -27,11 +27,11 @@ func (k msgServer) InviteParticipantToJoinTeam(goCtx context.Context, msg *types
 	}
 	team.JoiningInvites[participant.Address] = &participant
 	if participant.TeamJoiningInvites == nil {
-		participant.TeamJoiningInvites = []string{
-			team.Name,
+		participant.TeamJoiningInvites = map[string]string{
+			team.Name: team.Name,
 		}
 	} else {
-		participant.TeamJoiningInvites = append(participant.TeamJoiningInvites, team.Name)
+		participant.TeamJoiningInvites[team.Name] = team.Name
 	}
 	k.SetTeam(ctx, team)
 	k.SetParticipant(ctx, participant)
