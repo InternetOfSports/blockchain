@@ -16,6 +16,7 @@ service Msg {
   rpc RequestJoinTeam             (MsgRequestJoinTeam            ) returns (MsgRequestJoinTeamResponse            );
   rpc ManageJoinTeamRequest       (MsgManageJoinTeamRequest      ) returns (MsgManageJoinTeamRequestResponse      );
   rpc InviteParticipantToJoinTeam (MsgInviteParticipantToJoinTeam) returns (MsgInviteParticipantToJoinTeamResponse);
+  rpc ManageJoinTeamInvite        (MsgManageJoinTeamInvite       ) returns (MsgManageJoinTeamInviteResponse       );
 }
 message MsgRegisterParticipant {
   string creator  = 1;
@@ -73,5 +74,15 @@ message MsgInviteParticipantToJoinTeam {
 
 message MsgInviteParticipantToJoinTeamResponse {
   Participant participant = 1;
+}
+
+message MsgManageJoinTeamInvite {
+  string creator = 1;
+  string team    = 2;
+  bool   accept  = 3;
+}
+
+message MsgManageJoinTeamInviteResponse {
+  Team team = 1;
 }
 
