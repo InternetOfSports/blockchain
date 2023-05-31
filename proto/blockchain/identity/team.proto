@@ -12,5 +12,6 @@ message Team {
   Participant manager = 5; 
   Participant trainer = 6; 
   map<string, Participant> joiningRequests = 7;
+  map<string, Participant> joiningInvites = 8;
 }
 

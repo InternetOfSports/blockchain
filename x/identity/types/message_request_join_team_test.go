@@ -3,9 +3,9 @@ package types
 import (
 	"testing"
 
+	"github.com/InternetOfSports/blockchain/testutil/sample"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"
-	"github.com/InternetOfSports/blockchain/testutil/sample"
 )
 
 func TestMsgRequestJoinTeam_ValidateBasic(t *testing.T) {

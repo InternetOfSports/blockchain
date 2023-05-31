@@ -7,5 +7,6 @@ message Participant {
   string index = 1; 
   string nickname = 2; 
   string address = 3;
+  repeated string teamJoiningInvites = 4;
 }
 

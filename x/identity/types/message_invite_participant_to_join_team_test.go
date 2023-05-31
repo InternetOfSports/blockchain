@@ -8,21 +8,21 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestMsgManageJoinTeamRequest_ValidateBasic(t *testing.T) {
+func TestMsgInviteParticipantToJoinTeam_ValidateBasic(t *testing.T) {
 	tests := []struct {
 		name string
-		msg  MsgManageJoinTeamRequest
+		msg  MsgInviteParticipantToJoinTeam
 		err  error
 	}{
 		{
 			name: "invalid address",
-			msg: MsgManageJoinTeamRequest{
+			msg: MsgInviteParticipantToJoinTeam{
 				Creator: "invalid_address",
 			},
 			err: sdkerrors.ErrInvalidAddress,
 		}, {
 			name: "valid address",
-			msg: MsgManageJoinTeamRequest{
+			msg: MsgInviteParticipantToJoinTeam{
 				Creator: sample.AccAddress(),
 			},
 		},

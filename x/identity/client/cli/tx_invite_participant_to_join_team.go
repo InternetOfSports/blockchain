@@ -12,22 +12,24 @@ import (
 
 var _ = strconv.Itoa(0)
 
-func CmdRequestJoinTeam() *cobra.Command {
+func CmdInviteParticipantToJoinTeam() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "request-join-team [team]",
-		Short: "Broadcast message request-join-team",
-		Args:  cobra.ExactArgs(1),
+		Use:   "invite-participant-to-join-team [team] [participant]",
+		Short: "Broadcast message invite-participant-to-join-team",
+		Args:  cobra.ExactArgs(2),
 		RunE: func(cmd *cobra.Command, args []string) (err error) {
 			argTeam := args[0]
+			argParticipant := args[1]
 
 			clientCtx, err := client.GetClientTxContext(cmd)
 			if err != nil {
 				return err
 			}
 
-			msg := types.NewMsgRequestJoinTeam(
+			msg := types.NewMsgInviteParticipantToJoinTeam(
 				clientCtx.GetFromAddress().String(),
 				argTeam,
+				argParticipant,
 			)
 			if err := msg.ValidateBasic(); err != nil {
 				return err

@@ -44161,8 +44161,8 @@ paths:
                     name:
                       type: string
                     players:
-                      type: array
-                      items:
+                      type: object
+                      additionalProperties:
                         type: object
                         properties:
                           index:
@@ -44198,6 +44198,17 @@ paths:
                           type: string
                         address:
                           type: string
+                    joiningRequests:
+                      type: object
+                      additionalProperties:
+                        type: object
+                        properties:
+                          index:
+                            type: string
+                          nickname:
+                            type: string
+                          address:
+                            type: string
               pagination:
                 type: object
                 properties:
@@ -44321,8 +44332,8 @@ paths:
                   name:
                     type: string
                   players:
-                    type: array
-                    items:
+                    type: object
+                    additionalProperties:
                       type: object
                       properties:
                         index:
@@ -44358,6 +44369,17 @@ paths:
                         type: string
                       address:
                         type: string
+                  joiningRequests:
+                    type: object
+                    additionalProperties:
+                      type: object
+                      properties:
+                        index:
+                          type: string
+                        nickname:
+                          type: string
+                        address:
+                          type: string
         default:
           description: An unexpected error response.
           schema:
@@ -71934,7 +71956,70 @@ definitions:
     description: QueryParamsResponse is response type for the Query/Params RPC method.
   internetofsports.blockchain.identity.MsgCreateTeamResponse:
     type: object
+  internetofsports.blockchain.identity.MsgInviteParticipantToJoinTeamResponse:
+    type: object
+  internetofsports.blockchain.identity.MsgManageJoinTeamRequestResponse:
+    type: object
+    properties:
+      team:
+        type: object
+        properties:
+          index:
+            type: string
+          name:
+            type: string
+          players:
+            type: object
+            additionalProperties:
+              type: object
+              properties:
+                index:
+                  type: string
+                nickname:
+                  type: string
+                address:
+                  type: string
+          owner:
+            type: object
+            properties:
+              index:
+                type: string
+              nickname:
+                type: string
+              address:
+                type: string
+          manager:
+            type: object
+            properties:
+              index:
+                type: string
+              nickname:
+                type: string
+              address:
+                type: string
+          trainer:
+            type: object
+            properties:
+              index:
+                type: string
+              nickname:
+                type: string
+              address:
+                type: string
+          joiningRequests:
+            type: object
+            additionalProperties:
+              type: object
+              properties:
+                index:
+                  type: string
+                nickname:
+                  type: string
+                address:
+                  type: string
   internetofsports.blockchain.identity.MsgRegisterParticipantResponse:
+    type: object
+  internetofsports.blockchain.identity.MsgRequestJoinTeamResponse:
     type: object
   internetofsports.blockchain.identity.MsgSetTeamManagerResponse:
     type: object
@@ -72005,8 +72090,8 @@ definitions:
             name:
               type: string
             players:
-              type: array
-              items:
+              type: object
+              additionalProperties:
                 type: object
                 properties:
                   index:
@@ -72042,6 +72127,17 @@ definitions:
                   type: string
                 address:
                   type: string
+            joiningRequests:
+              type: object
+              additionalProperties:
+                type: object
+                properties:
+                  index:
+                    type: string
+                  nickname:
+                    type: string
+                  address:
+                    type: string
       pagination:
         type: object
         properties:
@@ -72091,8 +72187,8 @@ definitions:
           name:
             type: string
           players:
-            type: array
-            items:
+            type: object
+            additionalProperties:
               type: object
               properties:
                 index:
@@ -72128,6 +72224,17 @@ definitions:
                 type: string
               address:
                 type: string
+          joiningRequests:
+            type: object
+            additionalProperties:
+              type: object
+              properties:
+                index:
+                  type: string
+                nickname:
+                  type: string
+                address:
+                  type: string
   internetofsports.blockchain.identity.QueryParamsResponse:
     type: object
     properties:
@@ -72143,8 +72250,8 @@ definitions:
       name:
         type: string
       players:
-        type: array
-        items:
+        type: object
+        additionalProperties:
           type: object
           properties:
             index:
@@ -72180,3 +72287,14 @@ definitions:
             type: string
           address:
             type: string
+      joiningRequests:
+        type: object
+        additionalProperties:
+          type: object
+          properties:
+            index:
+              type: string
+            nickname:
+              type: string
+            address:
+              type: string
