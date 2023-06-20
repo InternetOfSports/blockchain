@@ -23,6 +23,10 @@ func (k msgServer) SetTeamTrainer(goCtx context.Context, msg *types.MsgSetTeamTr
 		return nil, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "Not allowed to change the trainer")
 	}
 	team.Trainer = &participant
+	if participant.TeamsTraining == nil {
+		participant.TeamsTraining = make(map[string]string)
+	}
+	participant.TeamsTraining[team.Name] = team.Name
 	k.SetTeam(ctx, team)
 	return &types.MsgSetTeamTrainerResponse{}, nil
 }

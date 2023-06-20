@@ -25,3 +25,4 @@ release/
 
 # Go workspace file
 go.work
+blockchaind

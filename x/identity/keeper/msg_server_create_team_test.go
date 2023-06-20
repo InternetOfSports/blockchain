@@ -64,4 +64,9 @@ func TestAssignedTeamOwner(t *testing.T) {
 	if teamResponse.Team.Owner.Nickname != ownerName {
 		require.ElementsMatch(t, teamResponse.Team.Owner.Nickname, ownerName)
 	}
+
+	participant, _ := k.GetParticipant(ctx, owner)
+
+	require.Equal(t, participant.MyTeams[teamName], teamName)
+
 }

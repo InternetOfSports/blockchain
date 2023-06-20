@@ -109,6 +109,7 @@ import (
 	identitymodule "github.com/InternetOfSports/blockchain/x/identity"
 	identitymodulekeeper "github.com/InternetOfSports/blockchain/x/identity/keeper"
 	identitymoduletypes "github.com/InternetOfSports/blockchain/x/identity/types"
+
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 
 	appparams "github.com/InternetOfSports/blockchain/app/params"
@@ -116,8 +117,8 @@ import (
 )
 
 const (
-	AccountAddressPrefix = "cosmos"
-	Name                 = "blockchain"
+	AccountAddressPrefix = "ios"
+	Name                 = "InternetOfSports"
 )
 
 // this line is used by starport scaffolding # stargate/wasm/app/enabledProposals

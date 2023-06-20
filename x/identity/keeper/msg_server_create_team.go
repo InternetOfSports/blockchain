@@ -18,10 +18,15 @@ func (k msgServer) CreateTeam(goCtx context.Context, msg *types.MsgCreateTeam) (
 	if foundTeam {
 		return nil, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "Team already exists")
 	}
+	if participant.MyTeams == nil {
+		participant.MyTeams = make(map[string]string)
+	}
+	participant.MyTeams[msg.Name] = msg.Name
 	k.SetTeam(ctx, types.Team{
 		Index: msg.Name,
 		Name:  msg.Name,
 		Owner: &participant,
 	})
+	k.SetParticipant(ctx, participant)
 	return &types.MsgCreateTeamResponse{}, nil
 }

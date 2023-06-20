@@ -8,5 +8,9 @@ message Participant {
   string nickname = 2; 
   string address = 3;
   map<string, string> teamJoiningInvites = 4;
+  map<string, string> myTeams = 5;
+  map<string, string> teamsPlayingFor = 6;
+  map<string, string> teamsManaging = 7;
+  map<string, string> teamsTraining = 8;
 }
 

@@ -28,6 +28,10 @@ func (k msgServer) ManageJoinTeamInvite(goCtx context.Context, msg *types.MsgMan
 			team.Players = make(map[string]*types.Participant)
 		}
 		team.Players[participant.Address] = &participant
+		if participant.TeamsPlayingFor == nil {
+			participant.TeamsPlayingFor = make(map[string]string)
+		}
+		participant.TeamsPlayingFor[team.Name] = team.Name
 	}
 	delete(team.JoiningInvites, participant.Address)
 	delete(participant.TeamJoiningInvites, team.Name)

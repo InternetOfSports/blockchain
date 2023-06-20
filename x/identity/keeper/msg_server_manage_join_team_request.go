@@ -28,6 +28,10 @@ func (k msgServer) ManageJoinTeamRequest(goCtx context.Context, msg *types.MsgMa
 			team.Players = make(map[string]*types.Participant)
 		}
 		team.Players[participant.Address] = participant
+		if participant.TeamsPlayingFor == nil {
+			participant.TeamsPlayingFor = make(map[string]string)
+		}
+		participant.TeamsPlayingFor[team.Name] = team.Name
 	}
 	delete(team.JoiningRequests, msg.Participant)
 	k.SetTeam(ctx, team)

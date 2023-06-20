@@ -23,6 +23,10 @@ func (k msgServer) SetTeamManager(goCtx context.Context, msg *types.MsgSetTeamMa
 	if team.Owner.Address != msg.Creator || (team.Manager != nil && team.Manager.Address != msg.Creator) {
 		return nil, sdkerrors.Wrap(sdkerrors.ErrInvalidRequest, "Not allowed to change the manager")
 	}
+	if participant.TeamsManaging == nil {
+		participant.TeamsManaging = make(map[string]string)
+	}
+	participant.TeamsManaging[team.Name] = team.Name
 	team.Manager = &participant
 	k.SetTeam(ctx, team)
 

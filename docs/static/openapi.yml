@@ -43994,8 +43994,24 @@ paths:
                     address:
                       type: string
                     teamJoiningInvites:
-                      type: array
-                      items:
+                      type: object
+                      additionalProperties:
+                        type: string
+                    myTeams:
+                      type: object
+                      additionalProperties:
+                        type: string
+                    teamsPlayingFor:
+                      type: object
+                      additionalProperties:
+                        type: string
+                    teamsManaging:
+                      type: object
+                      additionalProperties:
+                        type: string
+                    teamsTraining:
+                      type: object
+                      additionalProperties:
                         type: string
               pagination:
                 type: object
@@ -44122,8 +44138,24 @@ paths:
                   address:
                     type: string
                   teamJoiningInvites:
-                    type: array
-                    items:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  myTeams:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  teamsPlayingFor:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  teamsManaging:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  teamsTraining:
+                    type: object
+                    additionalProperties:
                       type: string
         default:
           description: An unexpected error response.
@@ -44180,8 +44212,24 @@ paths:
                           address:
                             type: string
                           teamJoiningInvites:
-                            type: array
-                            items:
+                            type: object
+                            additionalProperties:
+                              type: string
+                          myTeams:
+                            type: object
+                            additionalProperties:
+                              type: string
+                          teamsPlayingFor:
+                            type: object
+                            additionalProperties:
+                              type: string
+                          teamsManaging:
+                            type: object
+                            additionalProperties:
+                              type: string
+                          teamsTraining:
+                            type: object
+                            additionalProperties:
                               type: string
                     owner:
                       type: object
@@ -44193,8 +44241,24 @@ paths:
                         address:
                           type: string
                         teamJoiningInvites:
-                          type: array
-                          items:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        myTeams:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsPlayingFor:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsManaging:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsTraining:
+                          type: object
+                          additionalProperties:
                             type: string
                     manager:
                       type: object
@@ -44206,8 +44270,24 @@ paths:
                         address:
                           type: string
                         teamJoiningInvites:
-                          type: array
-                          items:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        myTeams:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsPlayingFor:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsManaging:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsTraining:
+                          type: object
+                          additionalProperties:
                             type: string
                     trainer:
                       type: object
@@ -44219,8 +44299,24 @@ paths:
                         address:
                           type: string
                         teamJoiningInvites:
-                          type: array
-                          items:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        myTeams:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsPlayingFor:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsManaging:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsTraining:
+                          type: object
+                          additionalProperties:
                             type: string
                     joiningRequests:
                       type: object
@@ -44234,8 +44330,24 @@ paths:
                           address:
                             type: string
                           teamJoiningInvites:
-                            type: array
-                            items:
+                            type: object
+                            additionalProperties:
+                              type: string
+                          myTeams:
+                            type: object
+                            additionalProperties:
+                              type: string
+                          teamsPlayingFor:
+                            type: object
+                            additionalProperties:
+                              type: string
+                          teamsManaging:
+                            type: object
+                            additionalProperties:
+                              type: string
+                          teamsTraining:
+                            type: object
+                            additionalProperties:
                               type: string
                     joiningInvites:
                       type: object
@@ -44249,8 +44361,24 @@ paths:
                           address:
                             type: string
                           teamJoiningInvites:
-                            type: array
-                            items:
+                            type: object
+                            additionalProperties:
+                              type: string
+                          myTeams:
+                            type: object
+                            additionalProperties:
+                              type: string
+                          teamsPlayingFor:
+                            type: object
+                            additionalProperties:
+                              type: string
+                          teamsManaging:
+                            type: object
+                            additionalProperties:
+                              type: string
+                          teamsTraining:
+                            type: object
+                            additionalProperties:
                               type: string
               pagination:
                 type: object
@@ -44386,8 +44514,24 @@ paths:
                         address:
                           type: string
                         teamJoiningInvites:
-                          type: array
-                          items:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        myTeams:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsPlayingFor:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsManaging:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsTraining:
+                          type: object
+                          additionalProperties:
                             type: string
                   owner:
                     type: object
@@ -44399,8 +44543,24 @@ paths:
                       address:
                         type: string
                       teamJoiningInvites:
-                        type: array
-                        items:
+                        type: object
+                        additionalProperties:
+                          type: string
+                      myTeams:
+                        type: object
+                        additionalProperties:
+                          type: string
+                      teamsPlayingFor:
+                        type: object
+                        additionalProperties:
+                          type: string
+                      teamsManaging:
+                        type: object
+                        additionalProperties:
+                          type: string
+                      teamsTraining:
+                        type: object
+                        additionalProperties:
                           type: string
                   manager:
                     type: object
@@ -44412,8 +44572,24 @@ paths:
                       address:
                         type: string
                       teamJoiningInvites:
-                        type: array
-                        items:
+                        type: object
+                        additionalProperties:
+                          type: string
+                      myTeams:
+                        type: object
+                        additionalProperties:
+                          type: string
+                      teamsPlayingFor:
+                        type: object
+                        additionalProperties:
+                          type: string
+                      teamsManaging:
+                        type: object
+                        additionalProperties:
+                          type: string
+                      teamsTraining:
+                        type: object
+                        additionalProperties:
                           type: string
                   trainer:
                     type: object
@@ -44425,8 +44601,24 @@ paths:
                       address:
                         type: string
                       teamJoiningInvites:
-                        type: array
-                        items:
+                        type: object
+                        additionalProperties:
+                          type: string
+                      myTeams:
+                        type: object
+                        additionalProperties:
+                          type: string
+                      teamsPlayingFor:
+                        type: object
+                        additionalProperties:
+                          type: string
+                      teamsManaging:
+                        type: object
+                        additionalProperties:
+                          type: string
+                      teamsTraining:
+                        type: object
+                        additionalProperties:
                           type: string
                   joiningRequests:
                     type: object
@@ -44440,8 +44632,24 @@ paths:
                         address:
                           type: string
                         teamJoiningInvites:
-                          type: array
-                          items:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        myTeams:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsPlayingFor:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsManaging:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsTraining:
+                          type: object
+                          additionalProperties:
                             type: string
                   joiningInvites:
                     type: object
@@ -44455,8 +44663,24 @@ paths:
                         address:
                           type: string
                         teamJoiningInvites:
-                          type: array
-                          items:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        myTeams:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsPlayingFor:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsManaging:
+                          type: object
+                          additionalProperties:
+                            type: string
+                        teamsTraining:
+                          type: object
+                          additionalProperties:
                             type: string
         default:
           description: An unexpected error response.
@@ -72047,11 +72271,215 @@ definitions:
           address:
             type: string
           teamJoiningInvites:
-            type: array
-            items:
+            type: object
+            additionalProperties:
+              type: string
+          myTeams:
+            type: object
+            additionalProperties:
+              type: string
+          teamsPlayingFor:
+            type: object
+            additionalProperties:
+              type: string
+          teamsManaging:
+            type: object
+            additionalProperties:
+              type: string
+          teamsTraining:
+            type: object
+            additionalProperties:
               type: string
   internetofsports.blockchain.identity.MsgManageJoinTeamInviteResponse:
     type: object
+    properties:
+      team:
+        type: object
+        properties:
+          index:
+            type: string
+          name:
+            type: string
+          players:
+            type: object
+            additionalProperties:
+              type: object
+              properties:
+                index:
+                  type: string
+                nickname:
+                  type: string
+                address:
+                  type: string
+                teamJoiningInvites:
+                  type: object
+                  additionalProperties:
+                    type: string
+                myTeams:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsPlayingFor:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsManaging:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsTraining:
+                  type: object
+                  additionalProperties:
+                    type: string
+          owner:
+            type: object
+            properties:
+              index:
+                type: string
+              nickname:
+                type: string
+              address:
+                type: string
+              teamJoiningInvites:
+                type: object
+                additionalProperties:
+                  type: string
+              myTeams:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsPlayingFor:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsManaging:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsTraining:
+                type: object
+                additionalProperties:
+                  type: string
+          manager:
+            type: object
+            properties:
+              index:
+                type: string
+              nickname:
+                type: string
+              address:
+                type: string
+              teamJoiningInvites:
+                type: object
+                additionalProperties:
+                  type: string
+              myTeams:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsPlayingFor:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsManaging:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsTraining:
+                type: object
+                additionalProperties:
+                  type: string
+          trainer:
+            type: object
+            properties:
+              index:
+                type: string
+              nickname:
+                type: string
+              address:
+                type: string
+              teamJoiningInvites:
+                type: object
+                additionalProperties:
+                  type: string
+              myTeams:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsPlayingFor:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsManaging:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsTraining:
+                type: object
+                additionalProperties:
+                  type: string
+          joiningRequests:
+            type: object
+            additionalProperties:
+              type: object
+              properties:
+                index:
+                  type: string
+                nickname:
+                  type: string
+                address:
+                  type: string
+                teamJoiningInvites:
+                  type: object
+                  additionalProperties:
+                    type: string
+                myTeams:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsPlayingFor:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsManaging:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsTraining:
+                  type: object
+                  additionalProperties:
+                    type: string
+          joiningInvites:
+            type: object
+            additionalProperties:
+              type: object
+              properties:
+                index:
+                  type: string
+                nickname:
+                  type: string
+                address:
+                  type: string
+                teamJoiningInvites:
+                  type: object
+                  additionalProperties:
+                    type: string
+                myTeams:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsPlayingFor:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsManaging:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsTraining:
+                  type: object
+                  additionalProperties:
+                    type: string
   internetofsports.blockchain.identity.MsgManageJoinTeamRequestResponse:
     type: object
     properties:
@@ -72074,8 +72502,24 @@ definitions:
                 address:
                   type: string
                 teamJoiningInvites:
-                  type: array
-                  items:
+                  type: object
+                  additionalProperties:
+                    type: string
+                myTeams:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsPlayingFor:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsManaging:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsTraining:
+                  type: object
+                  additionalProperties:
                     type: string
           owner:
             type: object
@@ -72087,8 +72531,24 @@ definitions:
               address:
                 type: string
               teamJoiningInvites:
-                type: array
-                items:
+                type: object
+                additionalProperties:
+                  type: string
+              myTeams:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsPlayingFor:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsManaging:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsTraining:
+                type: object
+                additionalProperties:
                   type: string
           manager:
             type: object
@@ -72100,8 +72560,24 @@ definitions:
               address:
                 type: string
               teamJoiningInvites:
-                type: array
-                items:
+                type: object
+                additionalProperties:
+                  type: string
+              myTeams:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsPlayingFor:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsManaging:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsTraining:
+                type: object
+                additionalProperties:
                   type: string
           trainer:
             type: object
@@ -72113,8 +72589,24 @@ definitions:
               address:
                 type: string
               teamJoiningInvites:
-                type: array
-                items:
+                type: object
+                additionalProperties:
+                  type: string
+              myTeams:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsPlayingFor:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsManaging:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsTraining:
+                type: object
+                additionalProperties:
                   type: string
           joiningRequests:
             type: object
@@ -72128,8 +72620,24 @@ definitions:
                 address:
                   type: string
                 teamJoiningInvites:
-                  type: array
-                  items:
+                  type: object
+                  additionalProperties:
+                    type: string
+                myTeams:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsPlayingFor:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsManaging:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsTraining:
+                  type: object
+                  additionalProperties:
                     type: string
           joiningInvites:
             type: object
@@ -72143,8 +72651,24 @@ definitions:
                 address:
                   type: string
                 teamJoiningInvites:
-                  type: array
-                  items:
+                  type: object
+                  additionalProperties:
+                    type: string
+                myTeams:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsPlayingFor:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsManaging:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsTraining:
+                  type: object
+                  additionalProperties:
                     type: string
   internetofsports.blockchain.identity.MsgRegisterParticipantResponse:
     type: object
@@ -72167,8 +72691,24 @@ definitions:
       address:
         type: string
       teamJoiningInvites:
-        type: array
-        items:
+        type: object
+        additionalProperties:
+          type: string
+      myTeams:
+        type: object
+        additionalProperties:
+          type: string
+      teamsPlayingFor:
+        type: object
+        additionalProperties:
+          type: string
+      teamsManaging:
+        type: object
+        additionalProperties:
+          type: string
+      teamsTraining:
+        type: object
+        additionalProperties:
           type: string
   internetofsports.blockchain.identity.QueryAllParticipantResponse:
     type: object
@@ -72185,8 +72725,24 @@ definitions:
             address:
               type: string
             teamJoiningInvites:
-              type: array
-              items:
+              type: object
+              additionalProperties:
+                type: string
+            myTeams:
+              type: object
+              additionalProperties:
+                type: string
+            teamsPlayingFor:
+              type: object
+              additionalProperties:
+                type: string
+            teamsManaging:
+              type: object
+              additionalProperties:
+                type: string
+            teamsTraining:
+              type: object
+              additionalProperties:
                 type: string
       pagination:
         type: object
@@ -72238,8 +72794,24 @@ definitions:
                   address:
                     type: string
                   teamJoiningInvites:
-                    type: array
-                    items:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  myTeams:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  teamsPlayingFor:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  teamsManaging:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  teamsTraining:
+                    type: object
+                    additionalProperties:
                       type: string
             owner:
               type: object
@@ -72251,8 +72823,24 @@ definitions:
                 address:
                   type: string
                 teamJoiningInvites:
-                  type: array
-                  items:
+                  type: object
+                  additionalProperties:
+                    type: string
+                myTeams:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsPlayingFor:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsManaging:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsTraining:
+                  type: object
+                  additionalProperties:
                     type: string
             manager:
               type: object
@@ -72264,8 +72852,24 @@ definitions:
                 address:
                   type: string
                 teamJoiningInvites:
-                  type: array
-                  items:
+                  type: object
+                  additionalProperties:
+                    type: string
+                myTeams:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsPlayingFor:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsManaging:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsTraining:
+                  type: object
+                  additionalProperties:
                     type: string
             trainer:
               type: object
@@ -72277,8 +72881,24 @@ definitions:
                 address:
                   type: string
                 teamJoiningInvites:
-                  type: array
-                  items:
+                  type: object
+                  additionalProperties:
+                    type: string
+                myTeams:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsPlayingFor:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsManaging:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsTraining:
+                  type: object
+                  additionalProperties:
                     type: string
             joiningRequests:
               type: object
@@ -72292,8 +72912,24 @@ definitions:
                   address:
                     type: string
                   teamJoiningInvites:
-                    type: array
-                    items:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  myTeams:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  teamsPlayingFor:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  teamsManaging:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  teamsTraining:
+                    type: object
+                    additionalProperties:
                       type: string
             joiningInvites:
               type: object
@@ -72307,8 +72943,24 @@ definitions:
                   address:
                     type: string
                   teamJoiningInvites:
-                    type: array
-                    items:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  myTeams:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  teamsPlayingFor:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  teamsManaging:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  teamsTraining:
+                    type: object
+                    additionalProperties:
                       type: string
       pagination:
         type: object
@@ -72349,8 +73001,24 @@ definitions:
           address:
             type: string
           teamJoiningInvites:
-            type: array
-            items:
+            type: object
+            additionalProperties:
+              type: string
+          myTeams:
+            type: object
+            additionalProperties:
+              type: string
+          teamsPlayingFor:
+            type: object
+            additionalProperties:
+              type: string
+          teamsManaging:
+            type: object
+            additionalProperties:
+              type: string
+          teamsTraining:
+            type: object
+            additionalProperties:
               type: string
   internetofsports.blockchain.identity.QueryGetTeamResponse:
     type: object
@@ -72374,8 +73042,24 @@ definitions:
                 address:
                   type: string
                 teamJoiningInvites:
-                  type: array
-                  items:
+                  type: object
+                  additionalProperties:
+                    type: string
+                myTeams:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsPlayingFor:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsManaging:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsTraining:
+                  type: object
+                  additionalProperties:
                     type: string
           owner:
             type: object
@@ -72387,8 +73071,24 @@ definitions:
               address:
                 type: string
               teamJoiningInvites:
-                type: array
-                items:
+                type: object
+                additionalProperties:
+                  type: string
+              myTeams:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsPlayingFor:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsManaging:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsTraining:
+                type: object
+                additionalProperties:
                   type: string
           manager:
             type: object
@@ -72400,8 +73100,24 @@ definitions:
               address:
                 type: string
               teamJoiningInvites:
-                type: array
-                items:
+                type: object
+                additionalProperties:
+                  type: string
+              myTeams:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsPlayingFor:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsManaging:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsTraining:
+                type: object
+                additionalProperties:
                   type: string
           trainer:
             type: object
@@ -72413,8 +73129,24 @@ definitions:
               address:
                 type: string
               teamJoiningInvites:
-                type: array
-                items:
+                type: object
+                additionalProperties:
+                  type: string
+              myTeams:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsPlayingFor:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsManaging:
+                type: object
+                additionalProperties:
+                  type: string
+              teamsTraining:
+                type: object
+                additionalProperties:
                   type: string
           joiningRequests:
             type: object
@@ -72428,8 +73160,24 @@ definitions:
                 address:
                   type: string
                 teamJoiningInvites:
-                  type: array
-                  items:
+                  type: object
+                  additionalProperties:
+                    type: string
+                myTeams:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsPlayingFor:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsManaging:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsTraining:
+                  type: object
+                  additionalProperties:
                     type: string
           joiningInvites:
             type: object
@@ -72443,8 +73191,24 @@ definitions:
                 address:
                   type: string
                 teamJoiningInvites:
-                  type: array
-                  items:
+                  type: object
+                  additionalProperties:
+                    type: string
+                myTeams:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsPlayingFor:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsManaging:
+                  type: object
+                  additionalProperties:
+                    type: string
+                teamsTraining:
+                  type: object
+                  additionalProperties:
                     type: string
   internetofsports.blockchain.identity.QueryParamsResponse:
     type: object
@@ -72472,8 +73236,24 @@ definitions:
             address:
               type: string
             teamJoiningInvites:
-              type: array
-              items:
+              type: object
+              additionalProperties:
+                type: string
+            myTeams:
+              type: object
+              additionalProperties:
+                type: string
+            teamsPlayingFor:
+              type: object
+              additionalProperties:
+                type: string
+            teamsManaging:
+              type: object
+              additionalProperties:
+                type: string
+            teamsTraining:
+              type: object
+              additionalProperties:
                 type: string
       owner:
         type: object
@@ -72485,8 +73265,24 @@ definitions:
           address:
             type: string
           teamJoiningInvites:
-            type: array
-            items:
+            type: object
+            additionalProperties:
+              type: string
+          myTeams:
+            type: object
+            additionalProperties:
+              type: string
+          teamsPlayingFor:
+            type: object
+            additionalProperties:
+              type: string
+          teamsManaging:
+            type: object
+            additionalProperties:
+              type: string
+          teamsTraining:
+            type: object
+            additionalProperties:
               type: string
       manager:
         type: object
@@ -72498,8 +73294,24 @@ definitions:
           address:
             type: string
           teamJoiningInvites:
-            type: array
-            items:
+            type: object
+            additionalProperties:
+              type: string
+          myTeams:
+            type: object
+            additionalProperties:
+              type: string
+          teamsPlayingFor:
+            type: object
+            additionalProperties:
+              type: string
+          teamsManaging:
+            type: object
+            additionalProperties:
+              type: string
+          teamsTraining:
+            type: object
+            additionalProperties:
               type: string
       trainer:
         type: object
@@ -72511,8 +73323,24 @@ definitions:
           address:
             type: string
           teamJoiningInvites:
-            type: array
-            items:
+            type: object
+            additionalProperties:
+              type: string
+          myTeams:
+            type: object
+            additionalProperties:
+              type: string
+          teamsPlayingFor:
+            type: object
+            additionalProperties:
+              type: string
+          teamsManaging:
+            type: object
+            additionalProperties:
+              type: string
+          teamsTraining:
+            type: object
+            additionalProperties:
               type: string
       joiningRequests:
         type: object
@@ -72526,8 +73354,24 @@ definitions:
             address:
               type: string
             teamJoiningInvites:
-              type: array
-              items:
+              type: object
+              additionalProperties:
+                type: string
+            myTeams:
+              type: object
+              additionalProperties:
+                type: string
+            teamsPlayingFor:
+              type: object
+              additionalProperties:
+                type: string
+            teamsManaging:
+              type: object
+              additionalProperties:
+                type: string
+            teamsTraining:
+              type: object
+              additionalProperties:
                 type: string
       joiningInvites:
         type: object
@@ -72541,6 +73385,22 @@ definitions:
             address:
               type: string
             teamJoiningInvites:
-              type: array
-              items:
+              type: object
+              additionalProperties:
+                type: string
+            myTeams:
+              type: object
+              additionalProperties:
+                type: string
+            teamsPlayingFor:
+              type: object
+              additionalProperties:
+                type: string
+            teamsManaging:
+              type: object
+              additionalProperties:
+                type: string
+            teamsTraining:
+              type: object
+              additionalProperties:
                 type: string
