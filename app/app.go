@@ -110,6 +110,9 @@ import (
 	identitymodulekeeper "github.com/InternetOfSports/blockchain/x/identity/keeper"
 	identitymoduletypes "github.com/InternetOfSports/blockchain/x/identity/types"
 
+	gameheadtoheadmodule "github.com/InternetOfSports/blockchain/x/gameheadtohead"
+	gameheadtoheadmodulekeeper "github.com/InternetOfSports/blockchain/x/gameheadtohead/keeper"
+	gameheadtoheadmoduletypes "github.com/InternetOfSports/blockchain/x/gameheadtohead/types"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 
 	appparams "github.com/InternetOfSports/blockchain/app/params"
@@ -170,6 +173,7 @@ var (
 		vesting.AppModuleBasic{},
 		blockchainmodule.AppModuleBasic{},
 		identitymodule.AppModuleBasic{},
+		gameheadtoheadmodule.AppModuleBasic{},
 		// this line is used by starport scaffolding # stargate/app/moduleBasic
 	)
 
@@ -246,6 +250,8 @@ type App struct {
 	BlockchainKeeper blockchainmodulekeeper.Keeper
 
 	IdentityKeeper identitymodulekeeper.Keeper
+
+	GameheadtoheadKeeper gameheadtoheadmodulekeeper.Keeper
 	// this line is used by starport scaffolding # stargate/app/keeperDeclaration
 
 	// mm is the module manager
@@ -292,6 +298,7 @@ func New(
 		icacontrollertypes.StoreKey,
 		blockchainmoduletypes.StoreKey,
 		identitymoduletypes.StoreKey,
+		gameheadtoheadmoduletypes.StoreKey,
 		// this line is used by starport scaffolding # stargate/app/storeKey
 	)
 	tkeys := sdk.NewTransientStoreKeys(paramstypes.TStoreKey)
@@ -519,6 +526,16 @@ func New(
 	)
 	identityModule := identitymodule.NewAppModule(appCodec, app.IdentityKeeper, app.AccountKeeper, app.BankKeeper)
 
+	app.GameheadtoheadKeeper = *gameheadtoheadmodulekeeper.NewKeeper(
+		appCodec,
+		keys[gameheadtoheadmoduletypes.StoreKey],
+		keys[gameheadtoheadmoduletypes.MemStoreKey],
+		app.GetSubspace(gameheadtoheadmoduletypes.ModuleName),
+
+		app.IdentityKeeper,
+	)
+	gameheadtoheadModule := gameheadtoheadmodule.NewAppModule(appCodec, app.GameheadtoheadKeeper, app.AccountKeeper, app.BankKeeper)
+
 	// this line is used by starport scaffolding # stargate/app/keeperDefinition
 
 	/**** IBC Routing ****/
@@ -586,6 +603,7 @@ func New(
 		icaModule,
 		blockchainModule,
 		identityModule,
+		gameheadtoheadModule,
 		// this line is used by starport scaffolding # stargate/app/appModule
 	)
 
@@ -617,6 +635,7 @@ func New(
 		vestingtypes.ModuleName,
 		blockchainmoduletypes.ModuleName,
 		identitymoduletypes.ModuleName,
+		gameheadtoheadmoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/beginBlockers
 	)
 
@@ -643,6 +662,7 @@ func New(
 		vestingtypes.ModuleName,
 		blockchainmoduletypes.ModuleName,
 		identitymoduletypes.ModuleName,
+		gameheadtoheadmoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/endBlockers
 	)
 
@@ -674,6 +694,7 @@ func New(
 		vestingtypes.ModuleName,
 		blockchainmoduletypes.ModuleName,
 		identitymoduletypes.ModuleName,
+		gameheadtoheadmoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/initGenesis
 	)
 
@@ -705,6 +726,7 @@ func New(
 		transferModule,
 		blockchainModule,
 		identityModule,
+		gameheadtoheadModule,
 		// this line is used by starport scaffolding # stargate/app/appModule
 	)
 	app.sm.RegisterStoreDecoders()
@@ -911,6 +933,7 @@ func initParamsKeeper(appCodec codec.BinaryCodec, legacyAmino *codec.LegacyAmino
 	paramsKeeper.Subspace(icahosttypes.SubModuleName)
 	paramsKeeper.Subspace(blockchainmoduletypes.ModuleName)
 	paramsKeeper.Subspace(identitymoduletypes.ModuleName)
+	paramsKeeper.Subspace(gameheadtoheadmoduletypes.ModuleName)
 	// this line is used by starport scaffolding # stargate/app/paramSubspace
 
 	return paramsKeeper

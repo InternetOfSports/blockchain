@@ -1,0 +1,7 @@
+syntax = "proto3";
+package internetofsports.blockchain.gameheadtohead;
+
+option go_package = "github.com/InternetOfSports/blockchain/x/gameheadtohead/types";
+
+// Msg defines the Msg service.
+service Msg {}

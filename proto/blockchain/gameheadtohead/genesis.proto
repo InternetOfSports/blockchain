@@ -1,0 +1,12 @@
+syntax = "proto3";
+package internetofsports.blockchain.gameheadtohead;
+
+import "gogoproto/gogo.proto";
+import "blockchain/gameheadtohead/params.proto";
+
+option go_package = "github.com/InternetOfSports/blockchain/x/gameheadtohead/types";
+
+// GenesisState defines the gameheadtohead module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+}
