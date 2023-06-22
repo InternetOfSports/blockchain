@@ -1,0 +1,27 @@
+syntax = "proto3";
+package internetofsports.blockchain.gameheadtohead;
+
+option go_package = "github.com/InternetOfSports/blockchain/x/gameheadtohead/types";
+
+message Game {
+  string index = 1;
+  string gameCreator = 2;
+  string teamHome = 3; 
+  string teamAway = 4;
+  string referee = 5;
+  int32 scoreHomeTeam = 6;
+  int32 scoreAwayTeam = 7;
+  int64 startTimestamp = 8;
+  int64 finishTimestamp = 9;
+  ScoreConsensus scoreConsensus = 10;
+}
+
+message ScoreConsensus {
+    int32 homeTeamSubmittedScoreHomeTeam = 1;
+    int32 homeTeamSubmittedScoreAwayTeam = 2;
+    int32 awayTeamSubmittedScoreHomeTeam = 3;
+    int32 awayTeamSubmittedScoreAwayTeam = 4;
+    int32 refereeSubmittedScoreHomeTeam = 5;
+    int32 refereeSubmittedScoreAwayTeam = 6;
+}
+

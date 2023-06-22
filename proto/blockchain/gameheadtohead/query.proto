@@ -1,26 +1,58 @@
 syntax = "proto3";
+
 package internetofsports.blockchain.gameheadtohead;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "blockchain/gameheadtohead/params.proto";
+import "blockchain/gameheadtohead/game.proto";
 
 option go_package = "github.com/InternetOfSports/blockchain/x/gameheadtohead/types";
 
 // Query defines the gRPC querier service.
 service Query {
+  
   // Parameters queries the parameters of the module.
-  rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
+  rpc Params (QueryParamsRequest) returns (QueryParamsResponse) {
     option (google.api.http).get = "/InternetOfSports/blockchain/gameheadtohead/params";
+  
+  }
+  
+  // Queries a list of Game items.
+  rpc Game    (QueryGetGameRequest) returns (QueryGetGameResponse) {
+    option (google.api.http).get = "/InternetOfSports/blockchain/gameheadtohead/game/{index}";
+  
+  }
+  rpc GameAll (QueryAllGameRequest) returns (QueryAllGameResponse) {
+    option (google.api.http).get = "/InternetOfSports/blockchain/gameheadtohead/game";
+  
   }
 }
-
 // QueryParamsRequest is request type for the Query/Params RPC method.
 message QueryParamsRequest {}
 
 // QueryParamsResponse is response type for the Query/Params RPC method.
 message QueryParamsResponse {
+  
   // params holds all the parameters of this module.
   Params params = 1 [(gogoproto.nullable) = false];
 }
+
+message QueryGetGameRequest {
+  string index = 1;
+}
+
+message QueryGetGameResponse {
+  Game game = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllGameRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllGameResponse {
+  repeated Game                                   game       = 1 [(gogoproto.nullable) = false];
+           cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+

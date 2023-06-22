@@ -1,7 +1,18 @@
 syntax = "proto3";
+
 package internetofsports.blockchain.gameheadtohead;
 
 option go_package = "github.com/InternetOfSports/blockchain/x/gameheadtohead/types";
 
 // Msg defines the Msg service.
-service Msg {}
+service Msg {
+  rpc CreateGame (MsgCreateGame) returns (MsgCreateGameResponse);
+}
+message MsgCreateGame {
+  string creator  = 1;
+  string teamHome = 2;
+  string teamAway = 3;
+}
+
+message MsgCreateGameResponse {}
+
